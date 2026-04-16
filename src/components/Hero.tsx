@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/NV_Ext_4.jpg')" }}
+        style={{ backgroundImage: "url('/hero.jpg')" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#07090d]/80 via-[#07090d]/60 to-[#07090d]" />
 

@@ -9,13 +9,31 @@ const phases = [
   'Post-Pour',
 ];
 
-export default function LeadMagnet() {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+type FormState = 'idle' | 'loading' | 'success' | 'error';
 
-  const handleSubmit = (e: React.FormEvent) => {
+export default function LeadMagnet() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [state, setState] = useState<FormState>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) setSubmitted(true);
+    if (!email) return;
+
+    setState('loading');
+
+    try {
+      const res = await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, name }),
+      });
+
+      if (!res.ok) throw new Error('failed');
+      setState('success');
+    } catch {
+      setState('error');
+    }
   };
 
   return (
@@ -37,7 +55,7 @@ export default function LeadMagnet() {
               {phases.map((phase) => (
                 <span
                   key={phase}
-                  className="text-xs font-bold text-gray-400 bg-white/5 border border-white/8 px-3 py-1.5 uppercase tracking-wide"
+                  className="text-xs font-bold text-gray-400 bg-white/5 border border-white/[0.08] px-3 py-1.5 uppercase tracking-wide"
                 >
                   {phase}
                 </span>
@@ -50,8 +68,8 @@ export default function LeadMagnet() {
             </div>
           </div>
 
-          <div className="border border-white/8 bg-white/3 p-10">
-            {submitted ? (
+          <div className="border border-white/[0.08] bg-white/[0.03] p-10">
+            {state === 'success' ? (
               <div className="text-center py-8">
                 <div className="text-amber-500 text-5xl font-black mb-4">✓</div>
                 <h3 className="text-white font-black text-2xl mb-2">You're all set.</h3>
@@ -70,6 +88,8 @@ export default function LeadMagnet() {
                   <input
                     type="text"
                     placeholder="Your name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     className="bg-white/5 border border-white/10 focus:border-amber-500/50 text-white placeholder-gray-600 px-4 py-3.5 text-sm outline-none transition-colors duration-200 w-full"
                   />
                   <input
@@ -80,11 +100,17 @@ export default function LeadMagnet() {
                     required
                     className="bg-white/5 border border-white/10 focus:border-amber-500/50 text-white placeholder-gray-600 px-4 py-3.5 text-sm outline-none transition-colors duration-200 w-full"
                   />
+                  {state === 'error' && (
+                    <p className="text-red-400 text-xs">
+                      Something went wrong. Please try again.
+                    </p>
+                  )}
                   <button
                     type="submit"
-                    className="bg-amber-500 hover:bg-amber-400 text-black font-black text-sm uppercase tracking-widest px-6 py-4 transition-all duration-200 flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(245,158,11,0.35)]"
+                    disabled={state === 'loading'}
+                    className="bg-amber-500 hover:bg-amber-400 disabled:opacity-60 disabled:cursor-not-allowed text-black font-black text-sm uppercase tracking-widest px-6 py-4 transition-all duration-200 flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(245,158,11,0.35)]"
                   >
-                    Get It Free <ArrowRight size={16} />
+                    {state === 'loading' ? 'Sending…' : <>Get It Free <ArrowRight size={16} /></>}
                   </button>
                 </form>
               </>
