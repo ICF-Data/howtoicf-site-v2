@@ -14,7 +14,7 @@ export default function Nav() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
-          {['Guides', 'About', 'Find an Installer'].map((item) => (
+          {['Guides', 'About'].map((item) => (
             <a
               key={item}
               href="#"
@@ -42,7 +42,7 @@ export default function Nav() {
 
       {open && (
         <div className="md:hidden bg-[#07090d] border-t border-white/5 px-6 py-4 flex flex-col gap-4">
-          {['Guides', 'About', 'Find an Installer'].map((item) => (
+          {['Guides', 'About'].map((item) => (
             <a
               key={item}
               href="#"

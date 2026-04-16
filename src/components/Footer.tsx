@@ -1,7 +1,7 @@
 export default function Footer() {
   const links = [
     { label: 'Guides', href: '#' },
-    { label: 'Find an Installer', href: '#' },
+
     { label: 'About', href: '#' },
     { label: 'Privacy', href: '#' },
     { label: 'Contact', href: '#' },
