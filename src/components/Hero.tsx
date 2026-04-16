@@ -1,9 +1,10 @@
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/hero.jpg')" }}
+      <img
+        src="/hero.jpg"
+        alt="Crew stacking Stronghold ICF blocks on a Nevada job site, concrete pump hose visible at wall corner"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#07090d]/80 via-[#07090d]/60 to-[#07090d]" />
 

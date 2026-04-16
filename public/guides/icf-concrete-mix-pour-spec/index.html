@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://howtoicf.com/guides/icf-concrete-mix-pour-spec/" />
   <title>ICF Concrete Mix Spec: What to Order, What to Check, What to Do When the Truck Arrives Wrong — howtoicf.com</title>
   <meta name="description" content="The complete field guide for ICF concrete mix specifications: target slump, PSI, aggregate size, on-site adjustment, pour sequence, lift height, and blowout prevention." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -371,6 +372,15 @@
     .btn-primary-sm:hover { background: var(--slate-blue-lt); text-decoration: none; }
 
     /* ─── Responsive ─────────────────────────────────────── */
+    
+    .related-guides { margin: 48px 0 0; padding-top: 40px; border-top: 1px solid var(--border); }
+    .related-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .related-card { display: block; background: var(--bg-alt); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 16px 20px; text-decoration: none; transition: border-color 0.15s; }
+    .related-card:hover { border-color: var(--amber); text-decoration: none; }
+    .related-card-tag { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .related-card-title { display: block; font-size: 14px; font-weight: 700; color: var(--near-white); line-height: 1.3; }
+
     @media (max-width: 720px) {
       .page-wrap { grid-template-columns: 1fr; gap: 0; }
       .toc { display: none; }
@@ -388,7 +398,7 @@
       <ul class="nav-links">
         <li><a href="/guides">Guides</a></li>
         <li><a href="/about">About</a></li>
-        <li><a href="/find-installer">Find an Installer</a></li>
+        
         <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
       </ul>
     </div>
@@ -607,6 +617,19 @@
         </div>
       </div>
 
+      <div class="related-guides">
+        <p class="related-label">Related Guides</p>
+        <div class="related-grid">
+          <a href="/guides/building-icf-home/" class="related-card">
+            <span class="related-card-tag">Start Here</span>
+            <span class="related-card-title">The Complete ICF Guide</span>
+          </a>
+          <a href="/guides/icf-window-door-buck-installation/" class="related-card">
+            <span class="related-card-tag">Rough-In</span>
+            <span class="related-card-title">Window &amp; Door Buck Installation</span>
+          </a>
+        </div>
+      </div>
       <div class="article-cta">
         <h3>Know what to check before you stack a single block.</h3>
         <p>The 25-point ICF Project Readiness Checklist — 5 phases from design through post-pour. The problems that hit on pour day were almost always locked in 3–6 weeks earlier. This is what catches them.</p>
