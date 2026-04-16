@@ -26,7 +26,7 @@ export default function FeaturedGuide() {
               </p>
 
               <a
-                href="#"
+                href="/guides/building-icf-home/"
                 className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black font-black text-sm uppercase tracking-widest px-7 py-4 transition-all duration-200 hover:shadow-[0_0_30px_rgba(245,158,11,0.35)]"
               >
                 Read the Guide <ArrowRight size={16} />

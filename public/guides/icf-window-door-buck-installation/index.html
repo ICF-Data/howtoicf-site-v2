@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICF Window and Door Buck Installation: Sizing, Bracing, and Flashing — howtoicf.com</title>
+  <meta name="description" content="ICF window buck installation: sizing, bracing before the pour, the correct 5-step flashing sequence, and why head flashing order determines whether you get callbacks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:             #1A1A1A;
+      --bg-alt:         #222222;
+      --bg-raised:      #272727;
+      --near-white:     #F0EBE3;
+      --warm-white:     #F4EFE8;
+      --slate-blue:     #2D4A6B;
+      --slate-blue-lt:  #3a5d89;
+      --amber:          #C8883A;
+      --warm-gray:      #9A9087;
+      --warm-red:       #A63D2F;
+      --concrete-green: #4A7C59;
+      --text:           #F0EBE3;
+      --text-muted:     rgba(240,235,227,0.65);
+      --border:         rgba(240,235,227,0.09);
+      --border-strong:  rgba(240,235,227,0.18);
+      --radius:         4px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: var(--near-white); text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--warm-gray); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--near-white); text-decoration: none; }
+    .nav-cta { font-size: 13px !important; font-weight: 700 !important; color: var(--near-white) !important; background: var(--slate-blue); padding: 8px 16px; border-radius: var(--radius); transition: background 0.15s !important; }
+    .nav-cta:hover { background: var(--slate-blue-lt) !important; }
+
+    .page-wrap {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 240px; gap: 64px; align-items: start;
+    }
+
+    .article-header { padding: 56px 0 48px; border-bottom: 1px solid var(--border); grid-column: 1 / -1; }
+    .article-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .article-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--amber); }
+    .article-header h1 {
+      font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.15; color: var(--near-white); margin-bottom: 20px; max-width: 760px;
+    }
+    .article-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .article-meta-item { font-size: 13px; color: var(--warm-gray); }
+    .article-meta-item strong { color: var(--near-white); font-weight: 600; }
+
+    .article-body { padding: 48px 0 80px; min-width: 0; }
+    .article-body p { font-size: 17px; line-height: 1.75; color: var(--text-muted); margin-bottom: 22px; }
+    .article-body > p:first-child { font-size: 19px; color: var(--near-white); line-height: 1.65; }
+    .article-body strong { color: var(--near-white); font-weight: 600; }
+    .article-body h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--near-white); line-height: 1.2; margin: 52px 0 18px; padding-top: 4px; }
+    .article-body h3 { font-size: 18px; font-weight: 700; color: var(--near-white); margin: 32px 0 12px; }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 22px; }
+    .article-body li { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin-bottom: 8px; }
+    .article-body li strong { color: var(--near-white); }
+
+    .spec-box {
+      background: var(--bg-alt); border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--amber); border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px; margin: 28px 0;
+    }
+    .spec-box p { margin-bottom: 10px; font-size: 15px; }
+    .spec-box p:last-child { margin-bottom: 0; }
+    .spec-box ul, .spec-box ol { margin-bottom: 0; padding-left: 20px; }
+    .spec-box li { font-size: 15px; margin-bottom: 6px; }
+    .spec-box-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+
+    .warning-box {
+      background: rgba(166,61,47,0.12); border: 1px solid rgba(166,61,47,0.3);
+      border-left: 3px solid var(--warm-red); border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px; margin: 28px 0;
+    }
+    .warning-box p { margin-bottom: 8px; font-size: 15px; }
+    .warning-box p:last-child { margin-bottom: 0; }
+    .warning-box-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-red); margin-bottom: 12px; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+    .faq-item { border-top: 1px solid var(--border); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { font-size: 16px; font-weight: 700; color: var(--near-white); margin-bottom: 10px; }
+    .faq-a { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+    .article-cta { background: var(--slate-blue); border-radius: var(--radius); padding: 36px 36px 32px; margin-top: 56px; }
+    .article-cta h3 { font-size: 20px; font-weight: 800; color: var(--near-white); margin-bottom: 10px; margin-top: 0; }
+    .article-cta p { font-size: 15px; color: rgba(240,235,227,0.75); margin-bottom: 20px; }
+    .btn-light { display: inline-block; padding: 13px 24px; background: var(--near-white); color: var(--slate-blue); font-family: inherit; font-size: 14px; font-weight: 700; border-radius: var(--radius); text-decoration: none; transition: background 0.15s; }
+    .btn-light:hover { background: var(--warm-white); text-decoration: none; }
+
+    .toc { padding: 48px 0 48px; position: sticky; top: 76px; }
+    .toc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .toc-list a { display: block; font-size: 13px; color: var(--warm-gray); padding: 8px 0; border-bottom: 1px solid var(--border); transition: color 0.15s; line-height: 1.4; }
+    .toc-list a:hover { color: var(--near-white); text-decoration: none; }
+    .toc-cta { margin-top: 28px; padding: 20px; background: var(--bg-alt); border: 1px solid var(--border-strong); border-radius: var(--radius); }
+    .toc-cta p { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .btn-primary-sm { display: block; padding: 11px 16px; background: var(--slate-blue); color: var(--near-white); font-family: inherit; font-size: 13px; font-weight: 700; border-radius: var(--radius); text-align: center; transition: background 0.15s; }
+    .btn-primary-sm:hover { background: var(--slate-blue-lt); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 0; }
+      .toc { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Window and Door Buck Installation in ICF: Sizing, Bracing, and the Flashing Sequence That Actually Works",
+        "description": "ICF window buck installation: sizing to concrete core dimension, bracing for pour pressure, and the 5-step flashing sequence that prevents callbacks.",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
+        "author": { "@type": "Organization", "name": "HowToICF" },
+        "publisher": { "@type": "Organization", "name": "HowToICF", "url": "https://howtoicf.com" },
+        "url": "https://howtoicf.com/guides/icf-window-door-buck-installation/"
+      },
+      {
+        "@type": "HowTo",
+        "name": "ICF Window Flashing Sequence",
+        "description": "The correct 5-step sequence for flashing windows in ICF walls",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Sill flashing first", "text": "Apply peel-and-stick membrane or liquid flashing across the full sill width, lapping up both jambs 2–3 inches. Leave two small gaps at the outside edge for drainage." },
+          { "@type": "HowToStep", "position": 2, "name": "Side flashings", "text": "Run flashing up both jambs, lapping over the sill flashing at the bottom corners. Each layer laps over the one below." },
+          { "@type": "HowToStep", "position": 3, "name": "Head flashing", "text": "Apply head flashing last, lapping over the top of the jamb flashings. Never install head before jambs — that creates a water trap at the top corners." },
+          { "@type": "HowToStep", "position": 4, "name": "Set the window", "text": "Apply a bead of silicone along the sill and set the window unit. Fasten the nailing flange through the EPS into the buck nailer using wafer-head screws, every other slot minimum, all the way around." },
+          { "@type": "HowToStep", "position": 5, "name": "Cover the fin", "text": "Apply flashing tape over the nailing flange on the sides and head to seal the fin. Leave the sill fin open for drainage — do not tape it closed." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is a buck in ICF construction?", "acceptedAnswer": { "@type": "Answer", "text": "A buck is a frame built inside an ICF wall opening that defines the rough opening dimensions, withstands hydrostatic pressure during the pour, and provides a fastening surface for window and door installation. Without a properly installed buck, there's nothing for the window installer to attach to." } },
+          { "@type": "Question", "name": "How do you size a buck for an ICF wall?", "acceptedAnswer": { "@type": "Answer", "text": "Buck depth must match the concrete core dimension of your form, not the overall wall width. A standard ICF wall with a 6-inch core and 2.5 inches of EPS on each side has a total width of 11 inches or more — but your buck is sized to the 6-inch core. Get the rough opening schedule from your window manufacturer before building any bucks." } },
+          { "@type": "Question", "name": "What are the two types of ICF bucks?", "acceptedAnswer": { "@type": "Answer", "text": "Wood bucks are built from pressure-treated lumber — cheaper, easier to source, and familiar to any framing crew. Proprietary foam bucks (like BuildBuck) are ICF-specific, eliminate thermal bridging at the opening, and have integrated nailers for window attachment. Either works; the installation principles are the same." } },
+          { "@type": "Question", "name": "What is the correct flashing sequence for ICF windows?", "acceptedAnswer": { "@type": "Answer", "text": "Sill first, sides second, head last. Then set the window and cover the fin. Never install head flashing before jambs — that creates a water trap at the top corners. The sill fin should not be taped closed; leave a drainage gap at the outside edge." } },
+          { "@type": "Question", "name": "How do you brace a buck for an ICF pour?", "acceptedAnswer": { "@type": "Answer", "text": "Diagonal bracing keeps the buck from racking. But hydrostatic pressure also pushes up from below — stake or strap the sill plate down. On openings over 4 feet wide, add a spreader bar across the top of the buck before the pour to prevent sides from bowing inward. Check all bracing the morning of the pour." } },
+          { "@type": "Question", "name": "What is a reglet detail for ICF windows?", "acceptedAnswer": { "@type": "Answer", "text": "A reglet is a shallow kerf cut into the EPS at the top of the opening. A bent metal drip cap inserts into the kerf, wraps the head flashing, and projects over the top of the window unit. This is the head flashing detail used on commercial and high-exposure applications to eliminate callbacks." } },
+          { "@type": "Question", "name": "Where should a window be placed in the depth of an ICF wall?", "acceptedAnswer": { "@type": "Answer", "text": "ICF walls are 11+ inches thick. You can place windows flush to the exterior face (maximum daylight), centered (most common for residential), or recessed toward the interior (larger sill, more weather protection). Commit to placement in the design phase — window manufacturers need setback dimensions to spec the correct extension jamb." } },
+          { "@type": "Question", "name": "What type of window should you use with ICF?", "acceptedAnswer": { "@type": "Answer", "text": "The wall system outperforms most window assemblies. In Climate Zone 4 or above, triple-pane or high-performance double-pane is the right match. A budget window in an R-22 ICF wall is the weakest link in your thermal envelope." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">howto<span>icf</span>.com</a>
+      <ul class="nav-links">
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/find-installer">Find an Installer</a></li>
+        <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <header class="article-header">
+      <p class="article-eyebrow">Windows &amp; Doors</p>
+      <h1>Window and Door Buck Installation in ICF: Sizing, Bracing, and the Flashing Sequence That Actually Works</h1>
+      <div class="article-meta">
+        <span class="article-meta-item"><strong>~1,550</strong> words</span>
+        <span class="article-meta-item"><strong>8 min</strong> read</span>
+        <span class="article-meta-item"><strong>8</strong> FAQs answered</span>
+        <span class="article-meta-item">Last updated <strong>April 2026</strong></span>
+      </div>
+    </header>
+  </div>
+
+  <div class="page-wrap">
+    <article class="article-body">
+
+      <p>The two most common callbacks on ICF projects involve windows and doors. Either water is getting in, or the window is out of square. Both problems were locked in before the concrete ever moved — during buck installation and flashing.</p>
+      <p>Here's the sequence that prevents both.</p>
+
+      <hr>
+
+      <h2 id="what-is-a-buck">What a Buck Is (And Why ICF Makes It Different)</h2>
+      <p>In wood frame construction, your rough opening is made of lumber — it's structural and it's the window frame. In ICF, the wall is concrete. Your window has nothing to attach to unless you build a frame inside the foam that survives the pour and gives the installer something to fasten to.</p>
+      <p>That frame is the <strong>buck</strong>.</p>
+      <p>The buck performs three jobs: it defines the rough opening, it withstands hydrostatic pressure during the pour without moving, and it gives your window or door installer a fastening surface. Fail at any one of those and you have a problem.</p>
+      <p>You have two main options: <strong>wood bucks</strong> (built from pressure-treated lumber) and <strong>proprietary foam bucks</strong> (like BuildBuck or similar). Wood bucks are cheaper, easier to source, and familiar to any framing crew. Foam bucks are ICF-specific, eliminate thermal bridging at the opening, and have integrated nailers for window attachment. Which you use depends on your budget, your climate zone, and your window installer's preference — but either way, the installation principles are the same.</p>
+
+      <hr>
+
+      <h2 id="sizing-the-buck">Sizing the Buck Right</h2>
+      <p>Your buck must be sized to the <strong>concrete core dimension of your form</strong>, not the overall form width. This is the most common specification error on first-time ICF projects.</p>
+      <p>An ICF wall with a 6-inch core and 2.5 inches of EPS on each side has a total wall width of 11 inches or more depending on the form brand. Your buck depth must match the core dimension so the window flange lands correctly. If your buck is too shallow, the nailing fin hangs in the foam. If it's too deep, the window protrudes past the wall face.</p>
+      <p>Before you order bucks or cut lumber, get the <strong>rough opening schedule from your window manufacturer</strong> — the specific RO dimensions for each unit. Your buck frames to those dimensions, accounting for the concrete core width. As one field rep put it during installation training: "That's why you always want the rough opening schedule. Otherwise, this nailing flange doesn't catch anything."</p>
+      <p>One practical note: try to size your rough openings to even ICF form dimensions. A rough opening that lands at 29 feet 7¾ inches is a headache. Design to block-friendly increments wherever the floor plan allows.</p>
+
+      <hr>
+
+      <h2 id="installing-the-buck">Installing the Buck: The Four Non-Negotiables</h2>
+
+      <h3>1. Plumb and square before you stack above it.</h3>
+      <p>Set the buck level at the sill, plumb on both jambs, and square corner to corner. Check diagonal measurements. A buck that's ¼ inch out of plumb before the pour will be 1 inch out of plumb after. You cannot shim a concrete rough opening.</p>
+
+      <h3>2. Brace to resist uplift, not just lateral pressure.</h3>
+      <p>Diagonal bracing keeps the buck from racking during the pour. But hydrostatic pressure also pushes up from below and can lift an inadequately staked buck off the sill. Stake or strap the sill plate down. On taller openings — anything over 4 feet wide — add a spreader bar across the top of the buck before the pour to prevent the sides from bowing inward.</p>
+
+      <h3>3. Nail the bracing properly, not provisionally.</h3>
+      <p>Bracing nailed with 1–2 nails per connection moves under pressure. Every diagonal brace should be fully nailed on both ends. Check bracing the morning of the pour — don't rely on what you set up the day before.</p>
+
+      <h3>4. Get the nailer orientation right.</h3>
+      <p>On foam bucks with integrated nailers, orientation matters. If the nailer is installed backwards, you're left with a narrow fastening surface that won't properly catch a window screw. Check orientation before you stack above the opening. Fix it before the pour, not after.</p>
+
+      <hr>
+
+      <h2 id="during-the-pour">What Happens During the Pour</h2>
+      <p>Fill the jamb areas before the sill and head when you reach that lift height. Use your vibrator at the face of the buck, inserting vertically — you want concrete to consolidate around the buck's attachment features, not push the buck laterally.</p>
+
+      <div class="warning-box">
+        <p class="warning-box-label">Watch for These During the Pour</p>
+        <ul style="padding-left:20px;">
+          <li style="font-size:15px; margin-bottom:8px; color:var(--text-muted);"><strong>Honeycombing at the jambs:</strong> Usually caused by too-stiff concrete (below 5" slump) or inadequate vibration. Address before interior work starts.</li>
+          <li style="font-size:15px; margin-bottom:8px; color:var(--text-muted);"><strong>Buck movement during the pour:</strong> If a jamb starts to move, stop pouring at that wall section. Re-brace, wait for the pour to firm up slightly, then continue.</li>
+          <li style="font-size:15px; color:var(--text-muted);"><strong>Head void:</strong> The underside of the buck head is a void trap. Vibrate aggressively at the header level and verify concrete reaches full height on both sides before moving to the next lift.</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2 id="flashing-sequence">The Flashing Sequence</h2>
+      <p>This is where most water problems originate. The sequence is not optional, and it's not interchangeable.</p>
+
+      <div class="spec-box">
+        <p class="spec-box-label">The 5-Step Flashing Sequence</p>
+        <ol>
+          <li><strong>Sill first.</strong> Peel-and-stick or liquid flashing across the full sill width, lapping 2–3" up both jambs. Leave drainage gaps at the outside edge — do not tape the sill closed.</li>
+          <li><strong>Side flashings.</strong> Run flashing up both jambs, lapping over the sill at the bottom corners. Each layer laps over the one below.</li>
+          <li><strong>Head flashing last.</strong> Laps over the top of the jamb flashings. If head goes on before jambs, you've created a water trap at the top corners.</li>
+          <li><strong>Set the window.</strong> Silicone bead at the sill, set the unit, fasten nailing flange through EPS into the buck nailer with wafer-head screws — every other slot minimum, all the way around.</li>
+          <li><strong>Cover the fin.</strong> Flashing tape over the nailing flange on sides and head. Leave the sill fin open for drainage.</li>
+        </ol>
+      </div>
+
+      <h3>Reglet at the Head (Commercial and High-Exposure)</h3>
+      <p>Cut a shallow kerf into the EPS at the top of the opening and insert a bent metal drip cap that wraps the head flashing, locks into the foam, and projects over the top of the window unit. Bend a slight double-fold on the insertion edge so it locks in without adhesive. Fill with backer rod and silicone. This is the detail that eliminates callbacks on commercial projects — and it's worth doing on any high-exposure residential opening.</p>
+
+      <hr>
+
+      <h2 id="window-placement">Window Placement: Flush or Recessed?</h2>
+      <p>ICF walls are 11+ inches thick. You have options for where the window sits in that depth.</p>
+      <ul>
+        <li><strong>Flush to exterior face:</strong> Maximum daylight, no sill reveal. Common on commercial.</li>
+        <li><strong>Centered:</strong> Splits the difference, creates an interior sill. Most popular on residential.</li>
+        <li><strong>Recessed toward interior:</strong> Larger interior sill, more weather protection, better thermal performance. The wall wraps the window on three sides.</li>
+      </ul>
+      <p>Commit to placement in the design phase. Window manufacturers need exact setback dimensions to specify the correct extension jamb or adapter kit. Don't decide on site.</p>
+      <p>And don't put a budget window in an ICF wall. The wall system outperforms most window assemblies. If you're in Climate Zone 4 or above, triple-pane or high-performance double-pane is the right match for what's beside it.</p>
+
+      <hr>
+
+      <h2 id="summary">The Summary</h2>
+      <ol>
+        <li>Size your buck to the concrete core dimension. Get the RO schedule from the window manufacturer before you build anything.</li>
+        <li>Set, plumb, square, and brace before stacking above. The buck must resist uplift, not just lateral pressure.</li>
+        <li>Check nailer orientation on foam bucks before the wall goes up.</li>
+        <li>During the pour: fill jambs first, vibrate around the buck, watch for head voids.</li>
+        <li>Flash in sequence — sill, sides, head, set window, cover fin. Never head before jambs. Never jambs before sill.</li>
+        <li>Premium windows belong in ICF walls. Don't let the window be the weakest link.</li>
+      </ol>
+
+      <hr>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">What is a buck in ICF construction?</p>
+          <p class="faq-a">A buck is a frame built inside an ICF wall opening that defines the rough opening dimensions, withstands hydrostatic pressure during the pour, and provides a fastening surface for window and door installation. Without a properly installed buck, there's nothing for the window installer to attach to.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How do you size a buck for an ICF wall?</p>
+          <p class="faq-a">Buck depth must match the concrete core dimension of your form, not the overall wall width. A standard ICF wall with a 6-inch core and 2.5 inches of EPS on each side has a total width of 11 inches or more — but your buck is sized to the 6-inch core. Get the rough opening schedule from your window manufacturer before building any bucks.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What are the two types of ICF bucks?</p>
+          <p class="faq-a">Wood bucks are built from pressure-treated lumber — cheaper, easier to source, and familiar to any framing crew. Proprietary foam bucks (like BuildBuck) are ICF-specific, eliminate thermal bridging at the opening, and have integrated nailers for window attachment. Either works; the installation principles are the same.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is the correct flashing sequence for ICF windows?</p>
+          <p class="faq-a">Sill first, sides second, head last. Then set the window and cover the fin. Never install head flashing before jambs — that creates a water trap at the top corners. The sill fin should not be taped closed; leave a drainage gap at the outside edge.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How do you brace a buck for an ICF pour?</p>
+          <p class="faq-a">Diagonal bracing keeps the buck from racking. But hydrostatic pressure also pushes up from below — stake or strap the sill plate down. On openings over 4 feet wide, add a spreader bar across the top of the buck before the pour to prevent sides from bowing inward. Check all bracing the morning of the pour.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is a reglet detail for ICF windows?</p>
+          <p class="faq-a">A reglet is a shallow kerf cut into the EPS at the top of the opening. A bent metal drip cap inserts into the kerf, wraps the head flashing, and projects over the top of the window unit. This is the head flashing detail used on commercial and high-exposure applications to eliminate callbacks.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Where should a window be placed in the depth of an ICF wall?</p>
+          <p class="faq-a">ICF walls are 11+ inches thick. You can place windows flush to the exterior face (maximum daylight), centered (most common for residential), or recessed toward the interior (larger sill, more weather protection). Commit to placement in the design phase — window manufacturers need setback dimensions to specify the correct extension jamb.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What type of window should you use with ICF?</p>
+          <p class="faq-a">The wall system outperforms most window assemblies. In Climate Zone 4 or above, triple-pane or high-performance double-pane is the right match. A budget window in an R-22 ICF wall is the weakest link in your thermal envelope.</p>
+        </div>
+      </div>
+
+      <div class="article-cta">
+        <h3>Planning an ICF build?</h3>
+        <p>The 25-Point ICF Project Readiness Checklist covers window and door planning, pre-pour inspection, and everything else you need before the first truck arrives.</p>
+        <a href="/#checklist" class="btn-light">Get the Free Checklist →</a>
+      </div>
+
+    </article>
+
+    <aside class="toc">
+      <p class="toc-label">In This Guide</p>
+      <ul class="toc-list">
+        <li><a href="#what-is-a-buck">What a Buck Is</a></li>
+        <li><a href="#sizing-the-buck">Sizing the Buck</a></li>
+        <li><a href="#installing-the-buck">Installing the Buck</a></li>
+        <li><a href="#during-the-pour">During the Pour</a></li>
+        <li><a href="#flashing-sequence">Flashing Sequence</a></li>
+        <li><a href="#window-placement">Window Placement</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="toc-cta">
+        <p>Pre-pour inspection checklist — 25 points, free download.</p>
+        <a href="/#checklist" class="btn-primary-sm">Get the Checklist →</a>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

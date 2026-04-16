@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICF vs. Wood Frame: The Real Energy Numbers — howtoicf.com</title>
+  <meta name="description" content="ICF vs wood frame: real utility numbers (70% drop in energy costs), 30-year ownership math, thermal mass explained, and the R-value gap nobody talks about." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:             #1A1A1A;
+      --bg-alt:         #222222;
+      --bg-raised:      #272727;
+      --near-white:     #F0EBE3;
+      --warm-white:     #F4EFE8;
+      --slate-blue:     #2D4A6B;
+      --slate-blue-lt:  #3a5d89;
+      --amber:          #C8883A;
+      --warm-gray:      #9A9087;
+      --warm-red:       #A63D2F;
+      --concrete-green: #4A7C59;
+      --text:           #F0EBE3;
+      --text-muted:     rgba(240,235,227,0.65);
+      --border:         rgba(240,235,227,0.09);
+      --border-strong:  rgba(240,235,227,0.18);
+      --radius:         4px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: var(--near-white); text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--warm-gray); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--near-white); text-decoration: none; }
+    .nav-cta { font-size: 13px !important; font-weight: 700 !important; color: var(--near-white) !important; background: var(--slate-blue); padding: 8px 16px; border-radius: var(--radius); transition: background 0.15s !important; }
+    .nav-cta:hover { background: var(--slate-blue-lt) !important; }
+
+    .page-wrap {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 240px; gap: 64px; align-items: start;
+    }
+
+    .article-header { padding: 56px 0 48px; border-bottom: 1px solid var(--border); grid-column: 1 / -1; }
+    .article-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .article-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--amber); }
+    .article-header h1 {
+      font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.15; color: var(--near-white); margin-bottom: 20px; max-width: 760px;
+    }
+    .article-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .article-meta-item { font-size: 13px; color: var(--warm-gray); }
+    .article-meta-item strong { color: var(--near-white); font-weight: 600; }
+
+    .article-body { padding: 48px 0 80px; min-width: 0; }
+    .article-body p { font-size: 17px; line-height: 1.75; color: var(--text-muted); margin-bottom: 22px; }
+    .article-body > p:first-child { font-size: 19px; color: var(--near-white); line-height: 1.65; }
+    .article-body strong { color: var(--near-white); font-weight: 600; }
+    .article-body h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--near-white); line-height: 1.2; margin: 52px 0 18px; padding-top: 4px; }
+    .article-body h3 { font-size: 18px; font-weight: 700; color: var(--near-white); margin: 32px 0 12px; }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 22px; }
+    .article-body li { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin-bottom: 8px; }
+    .article-body li strong { color: var(--near-white); }
+
+    .spec-box {
+      background: var(--bg-alt); border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--amber); border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px; margin: 28px 0;
+    }
+    .spec-box p { margin-bottom: 10px; font-size: 15px; }
+    .spec-box p:last-child { margin-bottom: 0; }
+    .spec-box ul, .spec-box ol { margin-bottom: 0; padding-left: 20px; }
+    .spec-box li { font-size: 15px; margin-bottom: 6px; }
+    .spec-box-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+    .faq-item { border-top: 1px solid var(--border); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { font-size: 16px; font-weight: 700; color: var(--near-white); margin-bottom: 10px; }
+    .faq-a { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+    .article-cta { background: var(--slate-blue); border-radius: var(--radius); padding: 36px 36px 32px; margin-top: 56px; }
+    .article-cta h3 { font-size: 20px; font-weight: 800; color: var(--near-white); margin-bottom: 10px; margin-top: 0; }
+    .article-cta p { font-size: 15px; color: rgba(240,235,227,0.75); margin-bottom: 20px; }
+    .btn-light { display: inline-block; padding: 13px 24px; background: var(--near-white); color: var(--slate-blue); font-family: inherit; font-size: 14px; font-weight: 700; border-radius: var(--radius); text-decoration: none; transition: background 0.15s; }
+    .btn-light:hover { background: var(--warm-white); text-decoration: none; }
+
+    .toc { padding: 48px 0 48px; position: sticky; top: 76px; }
+    .toc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .toc-list a { display: block; font-size: 13px; color: var(--warm-gray); padding: 8px 0; border-bottom: 1px solid var(--border); transition: color 0.15s; line-height: 1.4; }
+    .toc-list a:hover { color: var(--near-white); text-decoration: none; }
+    .toc-cta { margin-top: 28px; padding: 20px; background: var(--bg-alt); border: 1px solid var(--border-strong); border-radius: var(--radius); }
+    .toc-cta p { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .btn-primary-sm { display: block; padding: 11px 16px; background: var(--slate-blue); color: var(--near-white); font-family: inherit; font-size: 13px; font-weight: 700; border-radius: var(--radius); text-align: center; transition: background 0.15s; }
+    .btn-primary-sm:hover { background: var(--slate-blue-lt); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 0; }
+      .toc { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "ICF vs. Wood Frame: The Real Energy Numbers (And Why R-Value Alone Misses the Point)",
+        "description": "ICF vs wood frame: real utility numbers, 30-year ownership math, thermal mass explained, and the effective R-value gap.",
+        "datePublished": "2026-04-14",
+        "dateModified": "2026-04-14",
+        "author": { "@type": "Organization", "name": "HowToICF" },
+        "publisher": { "@type": "Organization", "name": "HowToICF", "url": "https://howtoicf.com" },
+        "url": "https://howtoicf.com/guides/icf-vs-wood-frame/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the R-value of ICF walls?", "acceptedAnswer": { "@type": "Answer", "text": "ICF walls with 2.5 inches of EPS foam on each side of a 6-inch concrete core rate R-22 to R-25 depending on the foam spec. Critically, that's the effective R-value — there are no studs acting as thermal bridges, so the rated value is what you actually get." } },
+          { "@type": "Question", "name": "Why is the effective R-value of wood frame lower than the rated value?", "acceptedAnswer": { "@type": "Answer", "text": "Wood frame walls are full of thermal bridges. Every stud is a pathway for heat to bypass the insulation entirely. At 16 inches on center, studs cover roughly 25% of your wall area. A 2x6 wall rated R-21 typically delivers an effective R-value closer to R-14." } },
+          { "@type": "Question", "name": "How much can ICF save on energy bills?", "acceptedAnswer": { "@type": "Answer", "text": "Average energy savings for ICF homes are 20–25% annually. Some studies report up to 60% savings in extreme climates. Typical utility cost drops from around 10 cents per square foot per month for wood frame to about 3 cents for ICF — roughly a 70% reduction." } },
+          { "@type": "Question", "name": "What is thermal mass and why does it matter?", "acceptedAnswer": { "@type": "Answer", "text": "Thermal mass is the ability of a material to absorb, store, and slowly release heat. The concrete core in an ICF wall absorbs heat during the day and releases it at night, dampening indoor temperature swings. This reduces HVAC load beyond what R-value alone predicts, especially in climates with large daily temperature swings." } },
+          { "@type": "Question", "name": "How much more does ICF cost than wood frame?", "acceptedAnswer": { "@type": "Answer", "text": "ICF typically costs 3–5% more on total project cost and 5–10% more on construction cost alone. On a 2,500 square foot home, the construction premium is roughly $2–4 per square foot depending on your market, crew experience, and lumber prices." } },
+          { "@type": "Question", "name": "What is the 30-year cost of ownership comparison?", "acceptedAnswer": { "@type": "Answer", "text": "On a 2,500 sq ft home, wood frame costs approximately $375,500 to build and roughly $106,650 in utilities over 30 years — about $482,235 total. ICF costs approximately $422,500 to build and roughly $32,000 in utilities over 30 years — about $454,531 total. ICF saves roughly $27,700 over 30 years before insurance savings." } },
+          { "@type": "Question", "name": "Does ICF affect homeowner's insurance costs?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Concrete and EPS foam don't rot, don't burn easily, and don't attract termites. That risk profile typically results in homeowner's insurance premiums 20–25% lower than comparable wood frame homes." } },
+          { "@type": "Question", "name": "Which climate zones benefit most from ICF?", "acceptedAnswer": { "@type": "Answer", "text": "The energy case is strongest in Climate Zones 5–7 (upper Midwest, Mountain West, Northeast) where long heating seasons amplify utility savings, and in Climate Zones 2–3 (Texas, Gulf Coast, desert Southwest) where high cooling loads and large daily temperature swings make thermal mass especially effective." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">howto<span>icf</span>.com</a>
+      <ul class="nav-links">
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/find-installer">Find an Installer</a></li>
+        <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <header class="article-header">
+      <p class="article-eyebrow">Energy Performance</p>
+      <h1>ICF vs. Wood Frame: The Real Energy Numbers (And Why R-Value Alone Misses the Point)</h1>
+      <div class="article-meta">
+        <span class="article-meta-item"><strong>~1,450</strong> words</span>
+        <span class="article-meta-item"><strong>7 min</strong> read</span>
+        <span class="article-meta-item"><strong>8</strong> FAQs answered</span>
+        <span class="article-meta-item">Last updated <strong>April 2026</strong></span>
+      </div>
+    </header>
+  </div>
+
+  <div class="page-wrap">
+    <article class="article-body">
+
+      <p>Most comparisons between ICF and wood frame stop at R-value. That's the wrong place to stop.</p>
+      <p>R-value tells you how resistant a material is to heat flow. What it doesn't tell you is how much heat is actually moving through your wall — because thermal bridging, thermal mass, and air infiltration matter as much as the foam spec. When you account for all three, the gap between ICF and wood frame is wider than any R-value chart will show you.</p>
+      <p>Here's what the full picture looks like.</p>
+
+      <hr>
+
+      <h2 id="r-value-baseline">The R-Value Baseline</h2>
+      <p>A standard 2×6 wood frame wall with fiberglass batt insulation gets you roughly R-19 in the cavity. Add continuous exterior insulation and you can push that to R-25. In Climate Zone 6 or 7, that's above code minimum — but not by much.</p>
+      <p>ICF walls with 2.5 inches of EPS foam on each side of a 6-inch concrete core come in at <strong>R-22 to R-25</strong>, depending on the foam spec. That's comparable on paper. But that's the last place these two systems are comparable.</p>
+      <p>Wood frame walls are full of thermal bridges. Every stud is a pathway for heat to bypass the insulation entirely. A 2×6 at 16 inches on center means roughly 25% of your wall area conducts heat at the rate of wood — not insulation. That real-world <strong>effective R-value</strong> of a wood frame wall with R-21 insulation is closer to <strong>R-14</strong>. Your energy rater knows this. Your heating bill proves it.</p>
+      <p>ICF has no studs. No bridges. The foam is continuous on both sides of the wall. The effective R-value is the rated R-value.</p>
+
+      <div class="spec-box">
+        <p class="spec-box-label">R-Value Comparison</p>
+        <ul>
+          <li><strong>2×6 wood frame rated R-value:</strong> R-19 to R-25 (with continuous insulation)</li>
+          <li><strong>2×6 wood frame effective R-value:</strong> ~R-14 (thermal bridging at studs)</li>
+          <li><strong>ICF rated R-value:</strong> R-22 to R-25 (6" core, 2.5" EPS each side)</li>
+          <li><strong>ICF effective R-value:</strong> R-22 to R-25 — no bridging, no gap</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2 id="thermal-mass">What Thermal Mass Actually Does</h2>
+      <p>Here's the part that doesn't show up in R-value ratings at all.</p>
+      <p>The 6 inches of concrete in the core of an ICF wall absorbs heat slowly during the day and releases it slowly at night. That <strong>thermal mass</strong> dampens temperature swings inside the building. Your HVAC system doesn't have to work as hard because the wall itself is moderating the indoor environment — drawing heat away in summer, holding it in winter.</p>
+      <p>This effect is most pronounced in climates with large daily temperature swings: the desert Southwest, mountain regions, anywhere with hot days and cool nights. In Climate Zones 3 and 4 especially, thermal mass can reduce HVAC load by an additional 10–15% beyond what the R-value alone would predict.</p>
+      <p>Wood frame has no mass. It responds to temperature changes fast in both directions. Your HVAC fills the gap.</p>
+
+      <hr>
+
+      <h2 id="utility-numbers">The Utility Numbers</h2>
+      <p>Average wood frame home utility costs for heating and cooling: roughly <strong>10 cents per square foot per month</strong>.</p>
+      <p>Average ICF home: about <strong>3 cents per square foot per month</strong>.</p>
+      <p>That's a 70% drop. Across studies, ICF homes deliver 20–25% savings on annual heating and cooling on average. Some studies report savings up to 60% in extreme climates.</p>
+      <p>Run the 30-year math on a 2,500 square foot home. The wood frame home racks up approximately $106,650 in heating and cooling costs over 30 years, assuming 2% annual inflation. The ICF home: just under $32,000. That's a <strong>$74,000 difference</strong> — from utility bills alone.</p>
+
+      <hr>
+
+      <h2 id="total-cost">The Total Cost of Ownership Case</h2>
+      <p>ICF costs more upfront. That's the honest answer. The premium runs 3–5% on the total project cost including land. On construction cost alone, you're looking at 5–10% more. On a 2,500 square foot home, that's roughly $2–4 per square foot depending on your market, your crew's experience, and where lumber prices are sitting.</p>
+      <p>Lumber prices matter more than people realize. During the 2020–2021 spikes, the cost gap between ICF and wood frame shrank dramatically. In some markets it disappeared entirely.</p>
+
+      <div class="spec-box">
+        <p class="spec-box-label">30-Year Ownership Math — 2,500 sq ft Home</p>
+        <ul>
+          <li><strong>Wood frame:</strong> ~$375,500 construction + ~$106,650 utilities = ~$482,235 total</li>
+          <li><strong>ICF:</strong> ~$422,500 construction + ~$31,995 utilities = ~$454,531 total</li>
+          <li><strong>ICF advantage:</strong> ~$27,700 over 30 years — before insurance savings</li>
+        </ul>
+        <p style="margin-top:12px; font-size:14px; color:var(--warm-gray);">Assumes 2% annual utility inflation. Does not include 20–25% insurance premium reduction on ICF homes.</p>
+      </div>
+
+      <p>Concrete and EPS foam don't rot, don't burn easily, and don't attract termites. That profile typically means homeowners insurance premiums 20–25% lower than comparable wood frame homes. Add that in and the math shifts further.</p>
+
+      <hr>
+
+      <h2 id="beyond-energy">Beyond Energy: What You're Actually Buying</h2>
+      <p>Here's the honest case for ICF that doesn't depend on utility bills.</p>
+      <p>If energy efficiency is your only priority, you might get 80% of the way there by staying with wood frame and spending about a third of the ICF premium on better insulation and air sealing. That's a legitimate choice.</p>
+      <p>But if you tried to take a standard wood frame house and upgrade it to match ICF across every performance dimension — energy, structural safety, fire resistance, noise, durability — the total cost of those upgrades would run about 118% of the ICF premium. You'd pay more and still not get the concrete core.</p>
+      <p><strong>Structural safety:</strong> ICF walls have 5–10× the racking resistance of standard wood walls. Wind load capacity approaches F3 tornado or Category 5 hurricane conditions. A direct hit from an F2/F3 tornado took the roof off an ICF home in Urbana, Illinois. The ICF walls stood intact. The wood frame houses next door were destroyed.</p>
+      <p><strong>Fire resistance:</strong> ICF walls carry a 4-hour fire rating. Wood frame typically gets 1 hour.</p>
+      <p><strong>Sound:</strong> ICF walls rate STC 48–58. Standard wood frame with fiberglass batt: STC 33–36. At STC 50, you can barely hear shouting through the wall.</p>
+
+      <hr>
+
+      <h2 id="climate-zones">Where ICF Makes the Most Sense</h2>
+      <p>The energy case for ICF is strongest in:</p>
+      <ul>
+        <li><strong>Climate Zones 5–7</strong> (upper Midwest, Mountain West, Northeast) — long heating seasons amplify the utility savings</li>
+        <li><strong>Climate Zones 2–3</strong> (Texas, Gulf Coast, desert Southwest) — cooling loads are high, thermal mass moderates peak demand</li>
+        <li><strong>Any zone with large daily temperature swings</strong> — thermal mass does its best work where the delta between day and night is significant</li>
+      </ul>
+      <p>The financial breakeven on the premium, depending on your energy market, is typically 7–12 years.</p>
+
+      <hr>
+
+      <h2 id="summary">The Summary</h2>
+      <ol>
+        <li>ICF's rated R-value is comparable to well-insulated wood frame. Its effective R-value is significantly higher because there are no thermal bridges.</li>
+        <li>Thermal mass reduces HVAC load beyond what R-value predicts — most pronounced in Climate Zones 3–4 and anywhere with large daily temperature swings.</li>
+        <li>Average energy savings: 20–25%. Some studies report up to 60% in extreme climates.</li>
+        <li>30-year total cost of ownership favors ICF by approximately $27,700 on a 2,500 sq ft home, before insurance savings.</li>
+        <li>The upfront premium is real: 3–5% on total project cost, 5–10% on construction only.</li>
+        <li>Energy efficiency is one of four performance advantages. Structural safety, fire resistance, and sound isolation come with the same wall — no upgrades required.</li>
+      </ol>
+      <p>Building codes set the minimum. ICF exceeds it across the board. How much that's worth to you is the real decision.</p>
+
+      <hr>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">What is the R-value of ICF walls?</p>
+          <p class="faq-a">ICF walls with 2.5 inches of EPS foam on each side of a 6-inch concrete core rate R-22 to R-25 depending on the foam spec. Critically, that's the effective R-value — there are no studs acting as thermal bridges, so the rated value is what you actually get.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Why is the effective R-value of wood frame lower than the rated value?</p>
+          <p class="faq-a">Wood frame walls are full of thermal bridges. Every stud is a pathway for heat to bypass the insulation entirely. At 16 inches on center, studs cover roughly 25% of your wall area. A 2×6 wall rated R-21 typically delivers an effective R-value closer to R-14.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How much can ICF save on energy bills?</p>
+          <p class="faq-a">Average energy savings for ICF homes are 20–25% annually. Some studies report up to 60% savings in extreme climates. Typical utility cost drops from around 10 cents per square foot per month for wood frame to about 3 cents for ICF — roughly a 70% reduction.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is thermal mass and why does it matter?</p>
+          <p class="faq-a">Thermal mass is the ability of a material to absorb, store, and slowly release heat. The concrete core in an ICF wall absorbs heat during the day and releases it at night, dampening indoor temperature swings. This reduces HVAC load beyond what R-value alone predicts, especially in climates with large daily temperature swings.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How much more does ICF cost than wood frame?</p>
+          <p class="faq-a">ICF typically costs 3–5% more on total project cost and 5–10% more on construction cost alone. On a 2,500 square foot home, the construction premium is roughly $2–4 per square foot depending on your market, crew experience, and lumber prices.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is the 30-year cost of ownership comparison?</p>
+          <p class="faq-a">On a 2,500 sq ft home, wood frame costs approximately $375,500 to build and roughly $106,650 in utilities over 30 years — about $482,235 total. ICF costs approximately $422,500 to build and roughly $32,000 in utilities over 30 years — about $454,531 total. ICF saves roughly $27,700 over 30 years before insurance savings.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Does ICF affect homeowner's insurance costs?</p>
+          <p class="faq-a">Yes. Concrete and EPS foam don't rot, don't burn easily, and don't attract termites. That risk profile typically results in homeowner's insurance premiums 20–25% lower than comparable wood frame homes.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Which climate zones benefit most from ICF?</p>
+          <p class="faq-a">The energy case is strongest in Climate Zones 5–7 (upper Midwest, Mountain West, Northeast) where long heating seasons amplify utility savings, and in Climate Zones 2–3 (Texas, Gulf Coast, desert Southwest) where high cooling loads and large daily temperature swings make thermal mass especially effective.</p>
+        </div>
+      </div>
+
+      <div class="article-cta">
+        <h3>Planning an ICF build?</h3>
+        <p>The 25-Point ICF Project Readiness Checklist walks you through every decision before you break ground — from design and permits to crew selection and pour day prep.</p>
+        <a href="/#checklist" class="btn-light">Get the Free Checklist →</a>
+      </div>
+
+    </article>
+
+    <aside class="toc">
+      <p class="toc-label">In This Guide</p>
+      <ul class="toc-list">
+        <li><a href="#r-value-baseline">The R-Value Baseline</a></li>
+        <li><a href="#thermal-mass">What Thermal Mass Does</a></li>
+        <li><a href="#utility-numbers">The Utility Numbers</a></li>
+        <li><a href="#total-cost">Total Cost of Ownership</a></li>
+        <li><a href="#beyond-energy">Beyond Energy</a></li>
+        <li><a href="#climate-zones">Where ICF Makes Sense</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="toc-cta">
+        <p>25-point checklist for ICF builds — free download.</p>
+        <a href="/#checklist" class="btn-primary-sm">Get the Checklist →</a>
+      </div>
+    </aside>
+  </div>
+
+</body>
+</html>

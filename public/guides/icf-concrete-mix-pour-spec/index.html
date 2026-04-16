@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICF Concrete Mix Spec: What to Order, What to Check, What to Do When the Truck Arrives Wrong — howtoicf.com</title>
+  <meta name="description" content="The complete field guide for ICF concrete mix specifications: target slump, PSI, aggregate size, on-site adjustment, pour sequence, lift height, and blowout prevention." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:             #1A1A1A;
+      --bg-alt:         #222222;
+      --bg-raised:      #272727;
+      --near-white:     #F0EBE3;
+      --warm-white:     #F4EFE8;
+      --slate-blue:     #2D4A6B;
+      --slate-blue-lt:  #3a5d89;
+      --amber:          #C8883A;
+      --warm-gray:      #9A9087;
+      --warm-red:       #A63D2F;
+      --concrete-green: #4A7C59;
+      --text:           #F0EBE3;
+      --text-muted:     rgba(240,235,227,0.65);
+      --border:         rgba(240,235,227,0.09);
+      --border-strong:  rgba(240,235,227,0.18);
+      --radius:         4px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ─── Nav ────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--near-white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--amber); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--warm-gray);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--near-white); text-decoration: none; }
+    .nav-cta {
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      color: var(--near-white) !important;
+      background: var(--slate-blue);
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      transition: background 0.15s !important;
+    }
+    .nav-cta:hover { background: var(--slate-blue-lt) !important; }
+
+    /* ─── Layout ─────────────────────────────────────────── */
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 240px;
+      gap: 64px;
+      align-items: start;
+    }
+
+    /* ─── Article header ─────────────────────────────────── */
+    .article-header {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      grid-column: 1 / -1;
+    }
+    .article-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .article-eyebrow::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--amber);
+    }
+    .article-header h1 {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--near-white);
+      margin-bottom: 20px;
+      max-width: 760px;
+    }
+    .article-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .article-meta-item {
+      font-size: 13px;
+      color: var(--warm-gray);
+    }
+    .article-meta-item strong {
+      color: var(--near-white);
+      font-weight: 600;
+    }
+
+    /* ─── Article body ───────────────────────────────────── */
+    .article-body {
+      padding: 48px 0 80px;
+      min-width: 0;
+    }
+    .article-body p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+    .article-body > p:first-child {
+      font-size: 19px;
+      color: var(--near-white);
+      line-height: 1.65;
+    }
+    .article-body strong { color: var(--near-white); font-weight: 600; }
+    .article-body h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--near-white);
+      line-height: 1.2;
+      margin: 52px 0 18px;
+      padding-top: 4px;
+    }
+    .article-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--near-white);
+      margin: 32px 0 12px;
+    }
+    .article-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--near-white);
+      margin: 24px 0 8px;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 40px 0;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 22px;
+      margin-bottom: 22px;
+    }
+    .article-body li {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .article-body li strong { color: var(--near-white); }
+
+    /* Callout / spec box */
+    .spec-box {
+      background: var(--bg-alt);
+      border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+    .spec-box p { margin-bottom: 10px; font-size: 15px; }
+    .spec-box p:last-child { margin-bottom: 0; }
+    .spec-box ul { margin-bottom: 0; }
+    .spec-box li { font-size: 15px; margin-bottom: 6px; }
+    .spec-box-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+
+    /* Checklist items */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    .checklist li:first-child { border-top: 1px solid var(--border); }
+    .checklist li::before {
+      content: '☐';
+      color: var(--concrete-green);
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 28px;
+    }
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--near-white);
+      margin-bottom: 10px;
+    }
+    .faq-a {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* CTA box */
+    .article-cta {
+      background: var(--slate-blue);
+      border-radius: var(--radius);
+      padding: 36px 36px 32px;
+      margin-top: 56px;
+    }
+    .article-cta h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--near-white);
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+    .article-cta p {
+      font-size: 15px;
+      color: rgba(240,235,227,0.75);
+      margin-bottom: 20px;
+    }
+    .btn-light {
+      display: inline-block;
+      padding: 13px 24px;
+      background: var(--near-white);
+      color: var(--slate-blue);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-light:hover { background: var(--warm-white); text-decoration: none; }
+
+    /* ─── TOC Sidebar ────────────────────────────────────── */
+    .toc {
+      padding: 48px 0 48px;
+      position: sticky;
+      top: 76px;
+    }
+    .toc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      margin-bottom: 16px;
+    }
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .toc-list a {
+      display: block;
+      font-size: 13px;
+      color: var(--warm-gray);
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.15s;
+      line-height: 1.4;
+    }
+    .toc-list a:hover { color: var(--near-white); text-decoration: none; }
+    .toc-cta {
+      margin-top: 28px;
+      padding: 20px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius);
+    }
+    .toc-cta p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+    .btn-primary-sm {
+      display: block;
+      padding: 11px 16px;
+      background: var(--slate-blue);
+      color: var(--near-white);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: var(--radius);
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .btn-primary-sm:hover { background: var(--slate-blue-lt); text-decoration: none; }
+
+    /* ─── Responsive ─────────────────────────────────────── */
+    @media (max-width: 720px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 0; }
+      .toc { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">howto<span>icf</span>.com</a>
+      <ul class="nav-links">
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/find-installer">Find an Installer</a></li>
+        <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ARTICLE HEADER -->
+  <div class="page-wrap">
+    <header class="article-header">
+      <p class="article-eyebrow">Pour Day</p>
+      <h1>ICF Concrete Mix Spec: What to Order, What to Check, What to Do When the Truck Arrives Wrong</h1>
+      <div class="article-meta">
+        <span class="article-meta-item"><strong>~2,600</strong> words</span>
+        <span class="article-meta-item"><strong>10 min</strong> read</span>
+        <span class="article-meta-item"><strong>10</strong> FAQs answered</span>
+        <span class="article-meta-item">Last updated <strong>April 2026</strong></span>
+      </div>
+    </header>
+  </div>
+
+  <div class="page-wrap">
+    <!-- ARTICLE BODY -->
+    <article class="article-body">
+
+      <p>The truck pulls up. Your pump operator tests the slump and it reads 7.5 inches.</p>
+      <p>Here's what you do: you don't pour.</p>
+      <p>That's the short version. The rest of this guide is everything you need to know before that moment — so you order the right mix, verify it when it arrives, and have a plan when it's not right. Because on pour day, the decisions happen fast and the margins are tight.</p>
+      <p>This isn't a manufacturer spec sheet. It's a walk-through from the field rep perspective: what to tell your ready-mix supplier, what to test at the truck, how to run the pour sequence, and the four things that actually cause blowouts.</p>
+
+      <hr>
+
+      <h2 id="why-mix-matters">Why the Mix Spec Matters More in ICF Than in Any Other Pour</h2>
+      <p>In a standard slab or footing pour, wrong slump is inconvenient. In an ICF wall pour, it can be catastrophic.</p>
+      <p>Here's why. ICF forms are EPS foam — they're closed, they're braced, and they contain pressure from the inside. When concrete flows into an ICF wall, the hydrostatic pressure of that wet concrete pushes outward against the foam panels. A mix that's too wet increases that pressure. If your bracing doesn't hold it, the form fails. That's a blowout — and it means stopping the pour, ripping apart foam, cleaning wet concrete, and starting the wall section over.</p>
+      <p>You can't fix a blowout mid-pour the same way you'd recover from an overwatered slab. The form is already compromised.</p>
+      <p>The other reason the mix spec matters: ICF cores are tight. A 6-inch core is only 6 inches across. Concrete has to flow around rebar, through tie connectors, and fill every void in the EPS cavity. If the aggregate is too large or the slump is too stiff, you get voids — air pockets in the wall — that compromise strength and insulation performance.</p>
+      <p>Get the mix right before the truck arrives. That's the whole point of this guide.</p>
+
+      <hr>
+
+      <h2 id="target-spec">The Target Spec: Slump, PSI, and Aggregate Size</h2>
+      <p>These three numbers are what you're ordering and what you're testing when the truck arrives.</p>
+
+      <h3>Slump: 5.5"–6"</h3>
+      <p>Target slump at point of delivery — meaning at the truck on your site, not what the batch plant guarantees — is <strong>5.5 to 6 inches</strong>. That range gives you enough flow to fill tight cores and move around rebar without creating the hydrostatic pressure that leads to blowouts.</p>
+      <ul>
+        <li>Concrete loses slump during transit. A batch plant that measures 6" slump at load may deliver 5" after a 45-minute drive in summer heat. Account for this when you spec.</li>
+        <li>6.5" is workable if your bracing is solid and you control the pour rate. 7" is borderline. Anything over 7" — send it back or add cement on-site.</li>
+        <li>Under 5" and you risk poor flow in tight cores, especially at corners and around window bucks.</li>
+      </ul>
+
+      <h3>PSI: 3,000–4,000</h3>
+      <p>Minimum 3,000 PSI compressive strength. Most ICF manufacturers specify 3,000 as the floor, but 3,500 is worth the small cost premium — it gives you better flowability from the plasticizers typically used to achieve it.</p>
+      <p>4,000 PSI is common for commercial and multi-story residential. For single-family residential, 3,500 is the sweet spot.</p>
+
+      <h3>Aggregate Size: 3/8" for 6" Core, 1/2" Maximum for 8" Core</h3>
+      <p>This is the one most residential builders get wrong. Standard ready-mix in most markets uses 3/4" aggregate. That's fine for slabs and footings — it's not fine for ICF wall cores.</p>
+      <p>The rule:</p>
+      <ul>
+        <li><strong>6-inch core:</strong> 3/8" maximum aggregate</li>
+        <li><strong>8-inch core:</strong> 1/2" maximum aggregate</li>
+      </ul>
+      <p>Larger aggregate bridges across rebar or tie connectors and creates voids. A 3/4" stone in a 6" core with 1/2" rebar spacing doesn't flow — it stacks. You end up with aggregate-rich zones at the bottom of each lift and cement paste-rich zones at the top, which weakens the wall.</p>
+      <p>Call your ready-mix supplier and specify aggregate size explicitly. It's not standard — they need to know.</p>
+
+      <h3>Plasticizer vs. Water: Do It Right</h3>
+      <p>The right way to hit target slump is with a <strong>mid-range or high-range water reducer</strong> — a plasticizer or superplasticizer. The wrong way is to add water at the plant or on-site to hit your slump number.</p>
+      <p>Adding water reduces compressive strength. Adding a water reducer (plasticizer) maintains the water-cement ratio while increasing workability. These are not the same thing. When you call the ready-mix plant, specify: "Hit 5.5 to 6 slump at point of delivery using a water reducer, not mix water."</p>
+
+      <hr>
+
+      <h2 id="how-to-order">How to Order the Mix Right: What to Tell Your Ready-Mix Supplier</h2>
+      <p>Most ready-mix dispatchers are used to slab work. ICF has different requirements, and you need to be explicit.</p>
+      <p><strong>Specify at point of delivery, not at plant.</strong> Tell them: "I need 5.5 to 6 inches slump when the truck arrives at my site." Let them figure out what to batch to hit that number after transit time. That's their job.</p>
+      <p><strong>Request a water reducer.</strong> Mid-range water reducer (Type A or F admixture) is standard. High-range water reducer (superplasticizer, Type G) gives more flow with less water — worth asking about if you're doing tight cores with heavy rebar.</p>
+      <p><strong>Specify aggregate size.</strong> 3/8" for 6" cores. 1/2" maximum for 8" cores. If they push back and say they can only do 3/4", you have two choices: find a different plant or discuss the aggregate issue with your structural engineer before proceeding.</p>
+      <p><strong>Limit fly ash substitution.</strong> Fly ash is commonly used to replace 15–30% of Portland cement. For ICF, you don't want more than 20% fly ash without approval from your structural engineer. Higher percentages slow heat of hydration and can create set time issues in cold weather.</p>
+
+      <div class="spec-box">
+        <p class="spec-box-label">Ordering Checklist</p>
+        <ul class="checklist">
+          <li>3,000–4,000 PSI compressive strength (specify 3,500 for single-family residential)</li>
+          <li>5.5"–6" slump at point of delivery</li>
+          <li>3/8" aggregate for 6" core walls; 1/2" maximum for 8" core walls</li>
+          <li>Water reducer (plasticizer) specified — not additional mix water</li>
+          <li>Fly ash ≤ 20% substitution</li>
+          <li>Confirm transit time; adjust batch slump accordingly for heat/distance</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2 id="truck-arrives-wrong">What to Do When the Truck Arrives Wrong</h2>
+      <p>This is the section no manufacturer publishes. Here's the field reality.</p>
+
+      <h3>Slump Too High (Over 6.5")</h3>
+      <p>Do not pour without a water reducer. At 7.0" slump with a water reducer the mix can look and flow like a 7" but have the strength of a 4" slump mix — it works, but you need confidence and experience. Otherwise, you have three options:</p>
+      <ol>
+        <li><strong>Send it back.</strong> This is the right call if you're at 7" or above and you don't have a water reducer on hand. Call the plant, explain the issue, ask for a replacement batch. Most plants will work with you. Document the reading before you send it back.</li>
+        <li><strong>Adjust on-site with cement.</strong> If you're at 6.5"–7" and you have bagged Portland cement on site, you can add 1–2 bags per yard to stiffen the mix. This changes the w/cm ratio — it's not ideal, but it's a valid field adjustment for a minor overage. Mix it in the drum for 30–40 rotations before testing again.</li>
+        <li><strong>Reduce pour rate significantly.</strong> At 6.5"–7", you can sometimes proceed if you slow down — one lift every 20–25 minutes instead of 10–15, monitoring every foot of every wall continuously. When in doubt, send it back.</li>
+      </ol>
+
+      <h3>Slump Too Low (Under 5")</h3>
+      <p>Under 5" slump means the concrete won't flow into tight cores. <strong>Do not add water to hit slump</strong> — that reduces strength and violates the mix design. Call the batch plant and ask about adding plasticizer to the drum on-site. Some plants will dispatch a technician with admixture; confirm before the truck leaves the plant.</p>
+
+      <h3>Aggregate Too Large</h3>
+      <p>If you ordered 3/8" aggregate and the batch comes with 3/4" stone, your options are limited — you can't change aggregate on-site. Call the plant, document the order, and request a correct batch. For 8" core work, 3/4" aggregate is borderline; experienced crews can sometimes proceed with aggressive vibration. For 6" cores, request the correct batch — large aggregate is not workable.</p>
+
+      <h3>On-Site Slump Test: How to Do It in Two Minutes</h3>
+      <p>You need a slump cone (ASTM C143). Here's the procedure:</p>
+      <ol>
+        <li>Dampen the inside of the cone and place it on a flat, non-absorbent surface.</li>
+        <li>Fill in three equal layers, rodding each layer 25 times with the tamping rod to the full depth of that layer.</li>
+        <li>Strike off the top flush.</li>
+        <li>Lift the cone straight up in 5–6 seconds. Do not twist.</li>
+        <li>Measure the distance the concrete slumped — the difference in height between the cone top and the concrete top. That number in inches is your slump.</li>
+      </ol>
+      <p>Test every truck, not just the first one. Mix consistency varies across loads.</p>
+
+      <hr>
+
+      <h2 id="pour-sequence">Pour Sequence and Lift Height</h2>
+      <p>Getting the mix right is half the job. Executing the pour is the other half.</p>
+
+      <h3>Start at Corners and Work In</h3>
+      <p>Always start your pour at corners and work toward the center of straight runs. Corners have more bracing convergence and more complex rebar geometry — filling them first lets you see flow behavior before you commit to the full wall run. If the mix isn't flowing well into corners, that's your early warning signal.</p>
+
+      <h3>Lift Height: 3–4 Feet Per Hour Maximum</h3>
+      <p>This is non-negotiable. Filling an ICF wall too fast is the second most common cause of blowouts after a wet mix.</p>
+      <p>Do not exceed 3 to 4 feet of wall height per hour. For a standard 9-foot wall, that's 2–3 lifts with 15–20 minutes between each. Concrete at the bottom of a tall pour hasn't begun to set yet when you're adding weight above — the hydrostatic pressure at the base increases with every foot of concrete above. Go too fast and the pressure exceeds what the bracing and form connectors can hold.</p>
+
+      <h3>Wait Time Between Lifts</h3>
+      <p>Minimum 10–15 minutes between lifts. In hot weather or with accelerating admixtures, you can sometimes compress this slightly. In cold weather (below 50°F), extend wait time — concrete sets more slowly and hydrostatic pressure stays elevated longer. Watch the forms during and between lifts. If you see any bulging, stop and reinforce bracing at that point before continuing.</p>
+
+      <h3>Vibrating: Use It Right</h3>
+      <p>Use a 1-inch head vibrator for ICF work. Insert the vibrator <strong>vertically</strong> into the concrete at the previous lift level — you want it to reach down into the prior lift to consolidate the joint between lifts.</p>
+      <p>Vibrate until the surface goes shiny and bubbles stop breaking at the surface — usually 10–15 seconds per insertion. Space insertion points 18–24 inches apart along the wall run. At corners, insert once at each face of the corner.</p>
+      <p><strong>Do not vibrate against the form face.</strong> You're consolidating concrete, not moving it. Lateral vibrator motion near the form face increases blowout risk.</p>
+
+      <hr>
+
+      <h2 id="blowout-prevention">Blowout Prevention: The Four Things That Cause Them</h2>
+      <p>Most ICF blowouts are preventable. They come from one or more of these four causes:</p>
+      <ol>
+        <li><strong>Mix too wet.</strong> Over 7" slump without a superplasticizer. This is the most common cause. Test every truck. Send back anything over 7". At 6.5", you need the water reducer and a slower pour rate.</li>
+        <li><strong>Pour rate too fast.</strong> Going footer to top plate too quickly, or adding lifts without adequate wait time. Follow the 3–4 feet per hour rule. No exceptions for schedule pressure.</li>
+        <li><strong>Over-vibration in one spot.</strong> Holding the vibrator in one location for more than 20–25 seconds creates a zone of liquefied concrete that generates intense localized pressure. Keep moving. 15 seconds per insertion point.</li>
+        <li><strong>Inadequate bracing before the pour.</strong> Bracing should be set, checked, and confirmed before the first truck arrives. Check bracing alignment at every lift — not just at the start.</li>
+      </ol>
+      <div class="spec-box">
+        <p class="spec-box-label">During-Pour Protocol</p>
+        <p>Assign one person whose only job is to walk the perimeter and watch for bulging while others manage the pump and vibration. If you see a bulge, stop immediately. Reinforce the bracing at that point. Do not continue pouring until it's resolved.</p>
+      </div>
+
+      <hr>
+
+      <h2 id="after-the-pour">After the Pour: Curing and What Comes Next</h2>
+
+      <h3>Minimum Cure Time Before Backfilling</h3>
+      <p>Do not backfill against ICF foundation walls until the concrete has reached adequate compressive strength. Rule of thumb: 7 days minimum for a 3,500 PSI mix in normal temperatures (above 50°F). In cold weather, extend cure time. Your structural engineer may specify longer for taller walls or high-backfill conditions — follow their spec, not the minimum.</p>
+
+      <h3>What to Watch in the First 24 Hours</h3>
+      <p>Check the walls 4–6 hours after the pour and again at 24 hours:</p>
+      <ul>
+        <li>Look for any remaining slight bulging. Minor bulging that appeared during the pour sometimes resolves as concrete sets. Significant bulging that doesn't resolve indicates a problem area.</li>
+        <li>Check that forms haven't shifted plumb. Much easier to correct at 6 hours than at 24.</li>
+        <li>Look at the top of the pour — concrete should be visible and level across the wall. If you see voids or areas where concrete didn't reach the top, add concrete at those points before it sets.</li>
+      </ul>
+
+      <h3>The Forms Stay In</h3>
+      <p>One of the most common questions on pour day: what happens to the foam after? The answer: nothing. The forms stay in the wall. That's the whole idea. The EPS stays as continuous insulation on both sides of the concrete core. You don't strip forms after an ICF pour. You proceed with rough-in.</p>
+
+      <hr>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">What is the best concrete mix for ICF walls?</p>
+          <p class="faq-a">A 3,500 PSI mix with 3/8-inch aggregate (for 6-inch cores) and a water reducer admixture to achieve 5.5–6 inches of slump at delivery. This combination gives you the flow to fill tight cores without the hydrostatic pressure that causes blowouts.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What slump should ICF concrete be?</p>
+          <p class="faq-a">5.5 to 6 inches, measured at the truck when it arrives on site — not at the batch plant. Specify this explicitly when you order. Anything over 7 inches without a water reducer should be sent back or adjusted before pouring.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What size aggregate for ICF concrete?</p>
+          <p class="faq-a">3/8-inch maximum for 6-inch core ICF walls. 1/2-inch maximum for 8-inch core walls. Standard ready-mix uses 3/4-inch aggregate — you must specify the smaller aggregate when you order.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Can you add water to ICF concrete on site?</p>
+          <p class="faq-a">You shouldn't. Adding water reduces compressive strength by diluting the water-cement ratio. If slump is too low on delivery, contact the batch plant about adding plasticizer to the drum instead.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How do you pour concrete in ICF forms?</p>
+          <p class="faq-a">In lifts — fill the wall to 3–4 feet of height, wait 10–15 minutes, and add the next lift. Start at corners and work toward the center of straight wall runs. Use a 1-inch vibrator at each lift, inserting vertically at 18–24 inch spacing.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How many lifts does ICF concrete take?</p>
+          <p class="faq-a">Depends on wall height. For a standard 9-foot wall, plan for 2–3 lifts. For a 10-foot basement wall, 3 lifts. The rule is 3–4 feet maximum per lift per hour.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What PSI concrete is used in ICF?</p>
+          <p class="faq-a">3,000 PSI minimum, 3,500 PSI recommended for single-family residential. 4,000 PSI is common for commercial and multi-story applications.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How do you prevent blowouts when pouring ICF?</p>
+          <p class="faq-a">Keep slump under 7 inches at delivery, don't exceed 3–4 feet of wall height per hour, don't over-vibrate in one spot, and confirm bracing is solid before the pour and at every lift.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What is the maximum pour rate for ICF walls?</p>
+          <p class="faq-a">3–4 feet of wall height per hour maximum. For a 9-foot wall, that's a minimum of 2–3 hours from first lift to finishing, with wait times between lifts.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Do ICF walls need to be vibrated?</p>
+          <p class="faq-a">Yes. Use a 1-inch head vibrator at 18–24 inch spacing, inserting vertically until the surface goes shiny and bubbles stop — about 10–15 seconds per insertion point. Don't over-vibrate and don't vibrate against the form face.</p>
+        </div>
+      </div>
+
+      <div class="article-cta">
+        <h3>Know what to check before you stack a single block.</h3>
+        <p>The 25-point ICF Project Readiness Checklist — 5 phases from design through post-pour. The problems that hit on pour day were almost always locked in 3–6 weeks earlier. This is what catches them.</p>
+        <a href="/#checklist" class="btn-light">Get the Free Checklist →</a>
+      </div>
+
+    </article>
+
+    <!-- TOC SIDEBAR -->
+    <aside class="toc">
+      <p class="toc-label">In this guide</p>
+      <ul class="toc-list">
+        <li><a href="#why-mix-matters">Why the mix spec matters</a></li>
+        <li><a href="#target-spec">Target spec: slump, PSI, aggregate</a></li>
+        <li><a href="#how-to-order">How to order the mix right</a></li>
+        <li><a href="#truck-arrives-wrong">When the truck arrives wrong</a></li>
+        <li><a href="#pour-sequence">Pour sequence and lift height</a></li>
+        <li><a href="#blowout-prevention">Blowout prevention</a></li>
+        <li><a href="#after-the-pour">After the pour</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="toc-cta">
+        <p>The 25-point ICF Readiness Checklist. Free.</p>
+        <a href="/#checklist" class="btn-primary-sm">Get the Checklist →</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid var(--border); padding: 28px 0;">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <span style="font-size:14px;font-weight:700;color:var(--warm-gray);">howto<span style="color:var(--amber);">icf</span>.com &nbsp;·&nbsp; <span style="font-weight:400;">distributes &amp; builds with Stronghold ICF</span></span>
+      <nav style="display:flex;gap:20px;">
+        <a href="/guides" style="font-size:13px;color:var(--warm-gray);">Guides</a>
+        <a href="/about" style="font-size:13px;color:var(--warm-gray);">About</a>
+        <a href="/privacy" style="font-size:13px;color:var(--warm-gray);">Privacy</a>
+        <a href="mailto:hello@howtoicf.com" style="font-size:13px;color:var(--warm-gray);">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "ICF Concrete Mix Spec: What to Order, What to Check, What to Do When the Truck Arrives Wrong",
+        "description": "The complete field guide for ICF concrete mix specifications: target slump, PSI, aggregate size, on-site adjustment protocol, pour sequence, lift height, blowout prevention, and curing.",
+        "author": { "@type": "Organization", "name": "HowToICF" },
+        "publisher": { "@type": "Organization", "name": "HowToICF", "url": "https://howtoicf.com" },
+        "datePublished": "2026-04-03",
+        "dateModified": "2026-04-14",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://howtoicf.com/guides/icf-concrete-mix-pour-spec" },
+        "keywords": "ICF concrete mix spec, concrete mix for ICF walls, ICF concrete slump, ICF aggregate size, ICF pour sequence"
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Order and Pour Concrete for ICF Walls",
+        "description": "Step-by-step guide to specifying the correct concrete mix for ICF walls and executing a safe pour sequence.",
+        "totalTime": "PT4H",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Order the correct mix", "text": "Specify 3,500 PSI with 3/8-inch aggregate (6-inch cores) or 1/2-inch aggregate (8-inch cores), 5.5 to 6 inches slump at point of delivery, and water reducer. Limit fly ash to 20% maximum." },
+          { "@type": "HowToStep", "position": 2, "name": "Test slump at the truck", "text": "Perform an ASTM C143 slump test when each truck arrives. Target 5.5 to 6 inches. Send back or adjust any mix over 7 inches. Test every truck." },
+          { "@type": "HowToStep", "position": 3, "name": "Start the pour at corners", "text": "Begin pouring at wall corners and work toward the center of straight runs." },
+          { "@type": "HowToStep", "position": 4, "name": "Fill in lifts of 3 to 4 feet", "text": "Fill to 3 to 4 feet of height, then wait 10 to 15 minutes before the next lift. Never exceed 4 feet per hour." },
+          { "@type": "HowToStep", "position": 5, "name": "Vibrate each lift", "text": "Use a 1-inch head vibrator, insert vertically at 18 to 24 inch spacing, vibrate 10 to 15 seconds per point. Do not vibrate against the form face." },
+          { "@type": "HowToStep", "position": 6, "name": "Monitor bracing continuously", "text": "Assign one person to walk the perimeter watching for bulging. Stop and reinforce if bulging appears." },
+          { "@type": "HowToStep", "position": 7, "name": "Cure before backfilling", "text": "Wait a minimum of 7 days before backfilling against ICF foundation walls in normal temperatures." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is the best concrete mix for ICF walls?", "acceptedAnswer": { "@type": "Answer", "text": "A 3,500 PSI mix with 3/8-inch aggregate for 6-inch cores and a water reducer to achieve 5.5 to 6 inches of slump at delivery." } },
+          { "@type": "Question", "name": "What slump should ICF concrete be?", "acceptedAnswer": { "@type": "Answer", "text": "5.5 to 6 inches at the truck on site. Anything over 7 inches without a water reducer should be sent back or adjusted." } },
+          { "@type": "Question", "name": "What size aggregate for ICF concrete?", "acceptedAnswer": { "@type": "Answer", "text": "3/8-inch maximum for 6-inch cores. 1/2-inch maximum for 8-inch cores. Standard ready-mix uses 3/4-inch — specify smaller aggregate when ordering." } },
+          { "@type": "Question", "name": "Can you add water to ICF concrete on site?", "acceptedAnswer": { "@type": "Answer", "text": "You shouldn't. Adding water reduces compressive strength. Ask the batch plant about adding plasticizer instead." } },
+          { "@type": "Question", "name": "How do you pour concrete in ICF forms?", "acceptedAnswer": { "@type": "Answer", "text": "In lifts of 3 to 4 feet, starting at corners. Wait 10 to 15 minutes between lifts. Use a 1-inch vibrator at 18 to 24 inch spacing." } },
+          { "@type": "Question", "name": "How do you prevent blowouts when pouring ICF?", "acceptedAnswer": { "@type": "Answer", "text": "Keep slump under 7 inches, stay under 4 feet per hour pour rate, avoid over-vibration, and confirm bracing at every lift." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</body>
+</html>

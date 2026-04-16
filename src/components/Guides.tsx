@@ -6,24 +6,28 @@ const guides = [
     title: 'The Complete ICF Guide',
     desc: 'Everything from site prep to post-pour finish work. The full picture in one place.',
     tag: 'Start Here',
+    href: '/guides/building-icf-home/',
   },
   {
     phase: '02',
     title: 'Concrete Mix Specs',
     desc: 'The exact pour specs your ready-mix supplier needs. No guessing, no back-and-forth.',
     tag: 'Pour Day',
+    href: '/guides/icf-concrete-mix-pour-spec/',
   },
   {
     phase: '03',
     title: 'ICF vs. Wood Frame',
     desc: 'An honest cost and performance comparison. Where ICF wins, where it costs more.',
     tag: 'Decision Phase',
+    href: '/guides/icf-vs-wood-frame/',
   },
   {
     phase: '04',
     title: 'Window & Door Installation',
     desc: 'Buck sizing, rough opening tolerances, and flashing details specific to ICF.',
     tag: 'Rough-In',
+    href: '/guides/icf-window-door-buck-installation/',
   },
 ];
 
@@ -55,7 +59,7 @@ export default function Guides() {
           {guides.map((guide) => (
             <a
               key={guide.phase}
-              href="#"
+              href={guide.href}
               className="group block border border-white/8 bg-white/3 hover:bg-white/6 hover:border-amber-500/30 p-7 transition-all duration-300"
             >
               <div className="flex items-center justify-between mb-6">
