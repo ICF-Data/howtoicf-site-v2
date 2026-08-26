@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
         src="/hero.jpg"
-        alt="Crew stacking Stronghold ICF blocks on a Nevada job site, concrete pump hose visible at wall corner"
+        alt="Crew stacking ICF blocks on a job site, concrete pump hose visible at wall corner"
         className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-[#07090d]/80 via-[#07090d]/60 to-[#07090d]" />
@@ -17,7 +17,7 @@ export default function Hero() {
           Build for Ultimate Resilience:{' '}
           <span className="text-amber-500">High Wind Resistance</span> and{' '}
           <span className="text-amber-500">Wildfire Ready</span> Structures
-          with Stronghold ICF.
+          with ICF.
         </h1>
 
         <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">

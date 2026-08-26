@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://howtoicf.com/contact/" />
+  <title>Contact — howtoicf.com</title>
+  <meta name="description" content="Get in touch with Eric Kimbriel, National Sales for Stronghold ICF, covering the Northeastern and Southwestern United States. Call or text directly." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://howtoicf.com/contact/" />
+  <meta property="og:title" content="Contact — howtoicf.com" />
+  <meta property="og:description" content="Get in touch with Eric Kimbriel, National Sales for Stronghold ICF, covering the Northeastern and Southwestern United States. Call or text directly." />
+  <meta property="og:image" content="https://howtoicf.com/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — howtoicf.com" />
+  <meta name="twitter:description" content="Get in touch with Eric Kimbriel, National Sales for Stronghold ICF, covering the Northeastern and Southwestern United States. Call or text directly." />
+  <meta name="twitter:image" content="https://howtoicf.com/hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #1A1A1A;
+      --bg-alt:         #222222;
+      --near-white:     #F0EBE3;
+      --warm-white:     #F4EFE8;
+      --slate-blue:     #2D4A6B;
+      --slate-blue-lt:  #3a5d89;
+      --amber:          #C8883A;
+      --warm-gray:      #9A9087;
+      --text:           #F0EBE3;
+      --text-muted:     rgba(240,235,227,0.65);
+      --border:         rgba(240,235,227,0.09);
+      --border-strong:  rgba(240,235,227,0.18);
+      --radius:         4px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: var(--near-white); text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--warm-gray); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--near-white); text-decoration: none; }
+    .nav-cta { font-size: 13px !important; font-weight: 700 !important; color: var(--near-white) !important; background: var(--slate-blue); padding: 8px 16px; border-radius: var(--radius); transition: background 0.15s !important; }
+    .nav-cta:hover { background: var(--slate-blue-lt) !important; }
+
+    .content {
+      max-width: 680px; margin: 0 auto; padding: 64px 24px 80px;
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--amber); }
+    h1 {
+      font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.15; color: var(--near-white); margin-bottom: 24px;
+    }
+    p { font-size: 17px; line-height: 1.75; color: var(--text-muted); margin-bottom: 20px; }
+    p strong { color: var(--near-white); font-weight: 600; }
+    hr { border: none; border-top: 1px solid var(--border); margin: 36px 0; }
+
+    .card {
+      background: var(--bg-alt); border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--amber); border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 32px 32px 28px; margin: 32px 0;
+    }
+    .card-name { font-size: 22px; font-weight: 800; color: var(--near-white); margin-bottom: 2px; }
+    .card-role { font-size: 14px; font-weight: 600; color: var(--amber); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 18px; }
+    .card-row { display: flex; gap: 14px; align-items: baseline; padding: 10px 0; border-top: 1px solid var(--border); font-size: 15px; }
+    .card-row:first-of-type { border-top: none; }
+    .card-label { flex: 0 0 110px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--warm-gray); }
+    .card-value { color: var(--near-white); font-weight: 500; }
+    .card-value a { color: var(--near-white); font-weight: 600; }
+    .card-value a:hover { color: var(--amber); }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; background: var(--slate-blue); color: var(--near-white); font-family: inherit; font-size: 14px; font-weight: 700; border-radius: var(--radius); text-decoration: none; transition: background 0.15s; }
+    .btn-primary:hover { background: var(--slate-blue-lt); text-decoration: none; }
+    .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; background: transparent; border: 1px solid var(--border-strong); color: var(--near-white); font-family: inherit; font-size: 14px; font-weight: 700; border-radius: var(--radius); text-decoration: none; transition: border-color 0.15s; }
+    .btn-secondary:hover { border-color: var(--amber); text-decoration: none; }
+
+    .placeholder-note { font-size: 13px; color: var(--warm-gray); background: rgba(200,136,58,0.08); border: 1px dashed rgba(200,136,58,0.4); padding: 10px 14px; border-radius: var(--radius); margin-top: 10px; }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .card-row { flex-direction: column; gap: 2px; }
+      .card-label { flex: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">howto<span>icf</span>.com</a>
+      <ul class="nav-links">
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/" style="color:var(--near-white);">Contact</a></li>
+        <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="content">
+    <p class="eyebrow">Contact</p>
+    <h1>Talk to a real ICF sales rep — not a contact form queue.</h1>
+
+    <p>Have a project, a spec question, or need pricing? Reach out directly. No gatekeeping, no ticket system — just a call or text.</p>
+
+    <div class="card">
+      <div class="card-name">Eric Kimbriel</div>
+      <div class="card-role">National Sales</div>
+
+      <div class="card-row">
+        <span class="card-label">Company</span>
+        <span class="card-value">Stronghold ICF</span>
+      </div>
+      <div class="card-row">
+        <span class="card-label">Territories</span>
+        <span class="card-value">Northeastern United States &amp; Southwestern United States</span>
+      </div>
+      <div class="card-row">
+        <span class="card-label">Phone / Text</span>
+        <span class="card-value"><a href="tel:+16052697890">605-269-7890</a></span>
+      </div>
+      <div class="card-row">
+        <span class="card-label">Email</span>
+        <span class="card-value"><a href="mailto:eric@strongholdicf.com">eric@strongholdicf.com</a></span>
+      </div>
+
+      <div class="btn-row">
+        <a href="tel:+16052697890" class="btn-primary">Call 605-269-7890</a>
+        <a href="sms:+16052697890" class="btn-secondary">Text Eric</a>
+        <a href="mailto:eric@strongholdicf.com" class="btn-secondary">Email Eric</a>
+      </div>
+    </div>
+
+    <hr>
+
+    <p>This site, HowToICF, is independent and manufacturer-agnostic — the guides aren't written to sell any one brand. Eric's day job is National Sales for Stronghold ICF, covering the Northeastern and Southwestern US, and he's happy to help whether or not Stronghold ends up being the right fit for your build.</p>
+
+  </div>
+
+  <footer style="border-top: 1px solid var(--border); padding: 28px 0;">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <span style="font-size:14px;font-weight:700;color:var(--warm-gray);">howto<span style="color:var(--amber);">icf</span>.com &nbsp;·&nbsp; <span style="font-weight:400;">The independent ICF field guide.</span></span>
+      <nav style="display:flex;gap:20px;">
+        <a href="/guides/" style="font-size:13px;color:var(--warm-gray);">Guides</a>
+        <a href="/about/" style="font-size:13px;color:var(--warm-gray);">About</a>
+        <a href="/privacy/" style="font-size:13px;color:var(--warm-gray);">Privacy</a>
+        <a href="/contact/" style="font-size:13px;color:var(--warm-gray);">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

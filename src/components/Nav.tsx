@@ -14,19 +14,13 @@ export default function Nav() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
-          {['Guides', 'About'].map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide"
-            >
-              {item}
-            </a>
-          ))}
+          <a href="/guides/" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">Guides</a>
+          <a href="/about/" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">About</a>
+          <a href="/contact/" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">Contact</a>
         </nav>
 
         <a
-          href="#checklist"
+          href="/#checklist"
           className="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2.5 transition-all duration-200 tracking-wide uppercase"
         >
           Free Checklist →
@@ -42,18 +36,11 @@ export default function Nav() {
 
       {open && (
         <div className="md:hidden bg-[#07090d] border-t border-white/5 px-6 py-4 flex flex-col gap-4">
-          {['Guides', 'About'].map((item) => (
-            <a
-              key={item}
-              href="#"
-              onClick={() => setOpen(false)}
-              className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium"
-            >
-              {item}
-            </a>
-          ))}
+          <a href="/guides/" onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">Guides</a>
+          <a href="/about/" onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">About</a>
+          <a href="/contact/" onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">Contact</a>
           <a
-            href="#checklist"
+            href="/#checklist"
             onClick={() => setOpen(false)}
             className="inline-flex items-center gap-2 bg-amber-500 text-black text-sm font-bold px-5 py-2.5 tracking-wide uppercase w-fit"
           >

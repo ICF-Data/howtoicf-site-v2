@@ -13,7 +13,7 @@ const differentiators = [
   },
   {
     label: 'No upsell, no spin',
-    desc: 'We distribute Stronghold ICF, and we\'re upfront about that. Guidance is honest regardless.',
+    desc: 'Manufacturer-agnostic. We work across the ICF ecosystem and call it as we see it — no brand loyalty clouding the guidance.',
   },
 ];
 
@@ -27,13 +27,13 @@ export default function About() {
               About This Site
             </p>
             <h2 className="text-4xl md:text-5xl font-black text-white leading-tight mb-6">
-              The rep's chair, not the manufacturer's brochure.
+              The field rep's chair, not any manufacturer's brochure.
             </h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              This site distributes Stronghold ICF and provides field-tested guidance for contractors, GCs, and owner-builders doing ICF for the first time.
+              HowToICF is the independent field guide for contractors, GCs, and owner-builders doing ICF for the first time. No manufacturer affiliation. No brand agenda.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Everything here is written from real install experience — not from a marketing department. If something about ICF is harder than it looks, we say so.
+              Everything here is written from real ICF sales and install experience. If something about ICF is harder than it looks, we say so.
             </p>
           </div>
 

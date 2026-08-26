@@ -29,6 +29,13 @@ const guides = [
     tag: 'Rough-In',
     href: '/guides/icf-window-door-buck-installation/',
   },
+  {
+    phase: '05',
+    title: 'ICF vs. CMU',
+    desc: 'The hidden steel and fur-out costs, thermal bridging, and when block still wins.',
+    tag: 'Decision Phase',
+    href: '/guides/icf-vs-cmu/',
+  },
 ];
 
 export default function Guides() {
@@ -48,7 +55,7 @@ export default function Guides() {
             </p>
           </div>
           <a
-            href="#"
+            href="/guides/"
             className="text-amber-500 hover:text-amber-400 font-bold text-sm uppercase tracking-widest flex items-center gap-2 transition-colors duration-200 whitespace-nowrap"
           >
             View All Guides <ArrowRight size={16} />

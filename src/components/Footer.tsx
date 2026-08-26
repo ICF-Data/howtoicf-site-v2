@@ -1,10 +1,9 @@
 export default function Footer() {
   const links = [
-    { label: 'Guides', href: '#' },
-
-    { label: 'About', href: '#' },
-    { label: 'Privacy', href: '#' },
-    { label: 'Contact', href: '#' },
+    { label: 'Guides', href: '/guides/' },
+    { label: 'About', href: '/about/' },
+    { label: 'Privacy', href: '/privacy/' },
+    { label: 'Contact', href: '/contact/' },
   ];
 
   return (
@@ -29,8 +28,7 @@ export default function Footer() {
         </nav>
 
         <p className="text-gray-600 text-sm text-center md:text-right">
-          howtoicf.com · distributes & builds with{' '}
-          <span className="text-amber-500/70">Stronghold ICF</span>
+          The independent ICF field guide.
         </p>
       </div>
     </footer>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://howtoicf.com/guides/" />
+  <title>ICF Construction Guides — howtoicf.com</title>
+  <meta name="description" content="Field guides for ICF construction: concrete mix specs, building your first ICF home, ICF vs wood frame, window and door buck installation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://howtoicf.com/guides/" />
+  <meta property="og:title" content="ICF Construction Guides — howtoicf.com" />
+  <meta property="og:description" content="Field guides for ICF construction: concrete mix specs, building your first ICF home, ICF vs wood frame, window and door buck installation." />
+  <meta property="og:image" content="https://howtoicf.com/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ICF Construction Guides — howtoicf.com" />
+  <meta name="twitter:description" content="Field guides for ICF construction: concrete mix specs, building your first ICF home, ICF vs wood frame, window and door buck installation." />
+  <meta name="twitter:image" content="https://howtoicf.com/hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:             #1A1A1A;
+      --bg-alt:         #222222;
+      --near-white:     #F0EBE3;
+      --warm-white:     #F4EFE8;
+      --slate-blue:     #2D4A6B;
+      --slate-blue-lt:  #3a5d89;
+      --amber:          #C8883A;
+      --warm-gray:      #9A9087;
+      --text:           #F0EBE3;
+      --text-muted:     rgba(240,235,227,0.65);
+      --border:         rgba(240,235,227,0.09);
+      --border-strong:  rgba(240,235,227,0.18);
+      --radius:         4px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: var(--near-white); text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--warm-gray); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--near-white); text-decoration: none; }
+    .nav-cta { font-size: 13px !important; font-weight: 700 !important; color: var(--near-white) !important; background: var(--slate-blue); padding: 8px 16px; border-radius: var(--radius); transition: background 0.15s !important; }
+    .nav-cta:hover { background: var(--slate-blue-lt) !important; }
+
+    .page-header {
+      max-width: 960px; margin: 0 auto; padding: 56px 24px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--amber); }
+    .page-header h1 {
+      font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.15; color: var(--near-white); margin-bottom: 14px; max-width: 640px;
+    }
+    .page-header p { font-size: 18px; color: var(--text-muted); line-height: 1.65; max-width: 600px; }
+
+    .guides-grid {
+      max-width: 960px; margin: 0 auto; padding: 48px 24px 80px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+    }
+
+    .guide-card {
+      display: block; background: var(--bg-alt); border: 1px solid var(--border-strong);
+      border-radius: var(--radius); padding: 28px 28px 24px;
+      text-decoration: none; transition: border-color 0.15s, background 0.15s;
+    }
+    .guide-card:hover { border-color: var(--amber); background: #272727; text-decoration: none; }
+    .guide-tag {
+      display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--amber); background: rgba(200,136,58,0.1);
+      border: 1px solid rgba(200,136,58,0.2); padding: 3px 8px; margin-bottom: 16px;
+    }
+    .guide-num {
+      font-size: 32px; font-weight: 800; color: rgba(200,136,58,0.3);
+      line-height: 1; margin-bottom: 12px;
+    }
+    .guide-card h2 { font-size: 18px; font-weight: 700; color: var(--near-white); margin-bottom: 10px; line-height: 1.3; }
+    .guide-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0; }
+
+    .cta-strip {
+      max-width: 960px; margin: 0 auto 48px; padding: 0 24px;
+    }
+    .cta-box { background: var(--slate-blue); border-radius: var(--radius); padding: 36px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+    .cta-box h3 { font-size: 20px; font-weight: 800; color: var(--near-white); margin: 0; }
+    .cta-box p { font-size: 14px; color: rgba(240,235,227,0.75); margin: 6px 0 0; }
+    .btn-light { display: inline-block; padding: 13px 24px; background: var(--near-white); color: var(--slate-blue); font-family: inherit; font-size: 14px; font-weight: 700; border-radius: var(--radius); text-decoration: none; white-space: nowrap; }
+    .btn-light:hover { background: var(--warm-white); text-decoration: none; }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "url": "https://howtoicf.com/guides/",
+    "name": "ICF Construction Guides",
+    "description": "Field guides for ICF construction: concrete mix specs, building your first ICF home, ICF vs wood frame, window and door buck installation.",
+    "isPartOf": { "@type": "WebSite", "url": "https://howtoicf.com/" }
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">howto<span>icf</span>.com</a>
+      <ul class="nav-links">
+        <li><a href="/guides/" style="color:var(--near-white);">Guides</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-header">
+    <p class="eyebrow">Resources</p>
+    <h1>ICF Construction Guides</h1>
+    <p>Field-tested guides for contractors, GCs, and owner-builders — from design through post-pour.</p>
+  </div>
+
+  <div class="guides-grid">
+
+    <a href="/guides/building-icf-home/" class="guide-card">
+      <div class="guide-num">01</div>
+      <span class="guide-tag">Start Here</span>
+      <h2>Building Your First ICF Home</h2>
+      <p>Real cost data, the 6 build phases, who to hire, and the 7 mistakes that derail first-time ICF projects.</p>
+    </a>
+
+    <a href="/guides/icf-concrete-mix-pour-spec/" class="guide-card">
+      <div class="guide-num">02</div>
+      <span class="guide-tag">Pour Day</span>
+      <h2>ICF Concrete Mix Spec</h2>
+      <p>Target slump, PSI, aggregate size, on-site adjustments, pour sequence, lift height, and blowout prevention.</p>
+    </a>
+
+    <a href="/guides/icf-vs-wood-frame/" class="guide-card">
+      <div class="guide-num">03</div>
+      <span class="guide-tag">Decision Phase</span>
+      <h2>ICF vs. Wood Frame: The Real Energy Numbers</h2>
+      <p>Effective R-value vs. rated R-value, 30-year ownership math, thermal mass, and where ICF makes the most sense.</p>
+    </a>
+
+    <a href="/guides/icf-window-door-buck-installation/" class="guide-card">
+      <div class="guide-num">04</div>
+      <span class="guide-tag">Rough-In</span>
+      <h2>Window &amp; Door Buck Installation</h2>
+      <p>Buck sizing, bracing for pour pressure, the 5-step flashing sequence, and the reglet detail that eliminates callbacks.</p>
+    </a>
+
+    <a href="/guides/icf-vs-cmu/" class="guide-card">
+      <div class="guide-num">05</div>
+      <span class="guide-tag">Decision Phase</span>
+      <h2>ICF vs. CMU</h2>
+      <p>The hidden steel and fur-out costs, thermal bridging, install speed, and when block still makes sense.</p>
+    </a>
+
+  </div>
+
+  <div class="cta-strip">
+    <div class="cta-box">
+      <div>
+        <h3>Before you stack a single block.</h3>
+        <p>The 25-Point ICF Project Readiness Checklist — 5 phases from design through post-pour. Free download.</p>
+      </div>
+      <a href="/#checklist" class="btn-light">Get the Free Checklist →</a>
+    </div>
+  </div>
+
+  <footer style="border-top: 1px solid var(--border); padding: 28px 0;">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <span style="font-size:14px;font-weight:700;color:var(--warm-gray);">howto<span style="color:var(--amber);">icf</span>.com &nbsp;·&nbsp; <span style="font-weight:400;">The independent ICF field guide.</span></span>
+      <nav style="display:flex;gap:20px;">
+        <a href="/guides/" style="font-size:13px;color:var(--warm-gray);">Guides</a>
+        <a href="/about/" style="font-size:13px;color:var(--warm-gray);">About</a>
+        <a href="/privacy/" style="font-size:13px;color:var(--warm-gray);">Privacy</a>
+        <a href="/contact/" style="font-size:13px;color:var(--warm-gray);">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

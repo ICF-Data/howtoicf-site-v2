@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://howtoicf.com/guides/icf-vs-cmu/" />
+  <title>ICF vs. CMU: What the Bid Comparison Doesn't Show You — howtoicf.com</title>
+  <meta name="description" content="ICF vs CMU block foundations: the hidden steel and fur-out costs, thermal bridging, install speed, and when block still makes sense." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://howtoicf.com/guides/icf-vs-cmu/" />
+  <meta property="og:title" content="ICF vs. CMU: What the Bid Comparison Doesn't Show You — howtoicf.com" />
+  <meta property="og:description" content="ICF vs CMU block foundations: the hidden steel and fur-out costs, thermal bridging, install speed, and when block still makes sense." />
+  <meta property="og:image" content="https://howtoicf.com/hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ICF vs. CMU: What the Bid Comparison Doesn't Show You — howtoicf.com" />
+  <meta name="twitter:description" content="ICF vs CMU block foundations: the hidden steel and fur-out costs, thermal bridging, install speed, and when block still makes sense." />
+  <meta name="twitter:image" content="https://howtoicf.com/hero.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --bg:             #1A1A1A;
+      --bg-alt:         #222222;
+      --bg-raised:      #272727;
+      --near-white:     #F0EBE3;
+      --warm-white:     #F4EFE8;
+      --slate-blue:     #2D4A6B;
+      --slate-blue-lt:  #3a5d89;
+      --amber:          #C8883A;
+      --warm-gray:      #9A9087;
+      --warm-red:       #A63D2F;
+      --concrete-green: #4A7C59;
+      --text:           #F0EBE3;
+      --text-muted:     rgba(240,235,227,0.65);
+      --border:         rgba(240,235,227,0.09);
+      --border-strong:  rgba(240,235,227,0.18);
+      --radius:         4px;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,26,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .nav-logo { font-size: 16px; font-weight: 800; letter-spacing: -0.01em; color: var(--near-white); text-decoration: none; }
+    .nav-logo span { color: var(--amber); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14px; font-weight: 500; color: var(--warm-gray); transition: color 0.15s; }
+    .nav-links a:hover { color: var(--near-white); text-decoration: none; }
+    .nav-cta { font-size: 13px !important; font-weight: 700 !important; color: var(--near-white) !important; background: var(--slate-blue); padding: 8px 16px; border-radius: var(--radius); transition: background 0.15s !important; }
+    .nav-cta:hover { background: var(--slate-blue-lt) !important; }
+
+    .page-wrap {
+      max-width: 960px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 240px; gap: 64px; align-items: start;
+    }
+
+    .article-header { padding: 56px 0 48px; border-bottom: 1px solid var(--border); grid-column: 1 / -1; }
+    .article-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--amber); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;
+    }
+    .article-eyebrow::before { content: ''; display: block; width: 20px; height: 2px; background: var(--amber); }
+    .article-header h1 {
+      font-size: clamp(26px, 4vw, 40px); font-weight: 800; letter-spacing: -0.03em;
+      line-height: 1.15; color: var(--near-white); margin-bottom: 20px; max-width: 760px;
+    }
+    .article-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+    .article-meta-item { font-size: 13px; color: var(--warm-gray); }
+    .article-meta-item strong { color: var(--near-white); font-weight: 600; }
+
+    .article-body { padding: 48px 0 80px; min-width: 0; }
+    .article-body p { font-size: 17px; line-height: 1.75; color: var(--text-muted); margin-bottom: 22px; }
+    .article-body > p:first-child { font-size: 19px; color: var(--near-white); line-height: 1.65; }
+    .article-body strong { color: var(--near-white); font-weight: 600; }
+    .article-body h2 { font-size: clamp(20px, 3vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--near-white); line-height: 1.2; margin: 52px 0 18px; padding-top: 4px; }
+    .article-body h3 { font-size: 18px; font-weight: 700; color: var(--near-white); margin: 32px 0 12px; }
+    .article-body hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    .article-body ul, .article-body ol { padding-left: 22px; margin-bottom: 22px; }
+    .article-body li { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin-bottom: 8px; }
+    .article-body li strong { color: var(--near-white); }
+
+    .spec-box {
+      background: var(--bg-alt); border: 1px solid var(--border-strong);
+      border-left: 3px solid var(--amber); border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px; margin: 28px 0;
+    }
+    .spec-box p { margin-bottom: 10px; font-size: 15px; }
+    .spec-box p:last-child { margin-bottom: 0; }
+    .spec-box ul, .spec-box ol { margin-bottom: 0; padding-left: 20px; }
+    .spec-box li { font-size: 15px; margin-bottom: 6px; }
+    .spec-box-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 28px; }
+    .faq-item { border-top: 1px solid var(--border); padding: 24px 0; }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q { font-size: 16px; font-weight: 700; color: var(--near-white); margin-bottom: 10px; }
+    .faq-a { font-size: 15px; color: var(--text-muted); line-height: 1.7; margin: 0; }
+
+    .article-cta { background: var(--slate-blue); border-radius: var(--radius); padding: 36px 36px 32px; margin-top: 56px; }
+    .article-cta h3 { font-size: 20px; font-weight: 800; color: var(--near-white); margin-bottom: 10px; margin-top: 0; }
+    .article-cta p { font-size: 15px; color: rgba(240,235,227,0.75); margin-bottom: 20px; }
+    .btn-light { display: inline-block; padding: 13px 24px; background: var(--near-white); color: var(--slate-blue); font-family: inherit; font-size: 14px; font-weight: 700; border-radius: var(--radius); text-decoration: none; transition: background 0.15s; }
+    .btn-light:hover { background: var(--warm-white); text-decoration: none; }
+
+    .toc { padding: 48px 0 48px; position: sticky; top: 76px; }
+    .toc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .toc-list a { display: block; font-size: 13px; color: var(--warm-gray); padding: 8px 0; border-bottom: 1px solid var(--border); transition: color 0.15s; line-height: 1.4; }
+    .toc-list a:hover { color: var(--near-white); text-decoration: none; }
+    .toc-cta { margin-top: 28px; padding: 20px; background: var(--bg-alt); border: 1px solid var(--border-strong); border-radius: var(--radius); }
+    .toc-cta p { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
+    .btn-primary-sm { display: block; padding: 11px 16px; background: var(--slate-blue); color: var(--near-white); font-family: inherit; font-size: 13px; font-weight: 700; border-radius: var(--radius); text-align: center; transition: background 0.15s; }
+    .btn-primary-sm:hover { background: var(--slate-blue-lt); text-decoration: none; }
+
+    .related-guides { margin: 48px 0 0; padding-top: 40px; border-top: 1px solid var(--border); }
+    .related-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); margin-bottom: 16px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .related-card { display: block; background: var(--bg-alt); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 16px 20px; text-decoration: none; transition: border-color 0.15s; }
+    .related-card:hover { border-color: var(--amber); text-decoration: none; }
+    .related-card-tag { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); margin-bottom: 6px; }
+    .related-card-title { display: block; font-size: 14px; font-weight: 700; color: var(--near-white); line-height: 1.3; }
+
+    @media (max-width: 720px) {
+      .page-wrap { grid-template-columns: 1fr; gap: 0; }
+      .toc { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "ICF vs. CMU: What the Bid Comparison Doesn't Show You",
+        "description": "ICF vs CMU block foundations: hidden steel and fur-out costs, thermal bridging, install speed, and when block still makes sense.",
+        "datePublished": "2026-08-26",
+        "dateModified": "2026-08-26",
+        "author": { "@type": "Organization", "name": "HowToICF" },
+        "publisher": { "@type": "Organization", "name": "HowToICF", "url": "https://howtoicf.com" },
+        "url": "https://howtoicf.com/guides/icf-vs-cmu/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Is ICF or CMU cheaper?", "acceptedAnswer": { "@type": "Answer", "text": "The initial bid often makes CMU look cheaper, but that number is usually incomplete. Steel reinforcement (rebar, embeds, lintel steel) and fur-out strips for interior finishes are typically separate line items quoted by other trades. Once the full assembly is priced apples-to-apples, ICF is frequently competitive with or cheaper than a complete CMU wall." } },
+          { "@type": "Question", "name": "Why isn't steel included in most CMU bids?", "acceptedAnswer": { "@type": "Answer", "text": "The mason's bid typically covers block and mortar labor only. Rebar, embeds, and lintel steel for a structurally sound block wall are usually a separate scope of work, often quoted by a different contractor. That split makes CMU look artificially cheap when bids are compared side by side." } },
+          { "@type": "Question", "name": "Do CMU walls need fur-outs for drywall?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. To attach drywall or interior finishes to a CMU wall, you need fur-out strips — usually in the framer's bid, not the mason's. ICF forms have fastening strips built into the foam, so drywall and exterior finishes attach directly with no separate furring step." } },
+          { "@type": "Question", "name": "Does CMU have a thermal bridging problem?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Standard CMU walls have concrete webs connecting the inside and outside face, creating a continuous path for heat to bypass any cavity insulation. Matching the continuous insulation of an ICF wall typically requires several inches of added exterior foam on a CMU assembly, and even then the wall doesn't perform as well because the thermal bridge at each web remains." } },
+          { "@type": "Question", "name": "Is ICF installation faster than CMU?", "acceptedAnswer": { "@type": "Answer", "text": "Generally yes. ICF forms are lightweight and stack quickly compared to laying individual block units. An experienced ICF crew typically gets a wall to pour-ready faster than a block mason lays the equivalent CMU wall, which shortens the timeline to get other trades on site." } },
+          { "@type": "Question", "name": "When does CMU still make sense over ICF?", "acceptedAnswer": { "@type": "Answer", "text": "CMU can still be the right call on projects with abundant local masonry labor and tight material budgets, on tall commercial walls engineered around a masonry design the architect already specced, or on repair and infill work tying into existing block construction where matching the existing system is simpler than transitioning materials." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">howto<span>icf</span>.com</a>
+      <ul class="nav-links">
+        <li><a href="/guides">Guides</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/#checklist" class="nav-cta">Free Checklist →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="page-wrap">
+    <header class="article-header">
+      <p class="article-eyebrow">Decision Phase</p>
+      <h1>ICF vs. CMU: What the Bid Comparison Doesn't Show You</h1>
+      <div class="article-meta">
+        <span class="article-meta-item"><strong>~1,150</strong> words</span>
+        <span class="article-meta-item"><strong>6 min</strong> read</span>
+        <span class="article-meta-item"><strong>6</strong> FAQs answered</span>
+        <span class="article-meta-item">Last updated <strong>August 2026</strong></span>
+      </div>
+    </header>
+  </div>
+
+  <div class="page-wrap">
+    <article class="article-body">
+
+      <p>Concrete masonry units — CMU, block, cinder block, whatever your market calls it — have dominated residential and commercial foundation work for decades. It's a known quantity, the crews are everywhere, and the first number on the bid sheet usually looks lower than ICF.</p>
+      <p>That first number is rarely the whole story. Once you price the full wall assembly — not just block and mortar, but everything it takes to get that wall to code and finish-ready — the gap between ICF and CMU narrows fast, and sometimes reverses.</p>
+      <p>Here's what the comparison actually looks like once you account for the whole assembly.</p>
+
+      <hr>
+
+      <h2 id="hidden-costs">The Costs That Don't Show Up on the CMU Bid</h2>
+      <p>A block mason's bid almost always covers block and mortar labor. It rarely covers everything else the wall needs to actually perform and pass inspection.</p>
+      <p><strong>Steel is usually a separate scope.</strong> The rebar, embeds, and lintel steel required for a structurally sound block wall are typically quoted by a different contractor entirely — sometimes the GC has to chase that number down separately. An ICF wall is a reinforced monolithic concrete pour in one system; the steel and the wall go up together, priced together, in one scope.</p>
+      <p><strong>Fur-outs add a step CMU can't skip.</strong> If you're finishing the interior with drywall, a bare CMU wall needs fur-out strips before sheetrock can attach — usually in the framer's bid, not the mason's. That's another trade, another schedule dependency, another line item that doesn't show up when you're comparing the mason's number to an ICF quote. ICF forms have fastening strips built into the foam at regular intervals, so drywall and exterior finishes attach directly — no furring step required.</p>
+
+      <div class="spec-box">
+        <p class="spec-box-label">What's Actually in Each Bid</p>
+        <ul>
+          <li><strong>CMU bid typically includes:</strong> block, mortar, mason labor</li>
+          <li><strong>CMU bid typically excludes:</strong> rebar/embeds/lintel steel, fur-out framing, exterior insulation upgrade</li>
+          <li><strong>ICF bid typically includes:</strong> forms, reinforcement, monolithic pour, built-in fastening strips, continuous insulation</li>
+        </ul>
+      </div>
+
+      <hr>
+
+      <h2 id="thermal-bridging">Why a CMU Wall Doesn't Perform Like Its R-Value Suggests</h2>
+      <p>A bare CMU wall doesn't come close to meeting most modern energy codes on its own. Builders typically add rigid foam or perlite fill inside the block cores to bring it up to code — but that barely moves the needle, because the concrete webs connecting the inside and outside face of the block create a continuous thermal bridge. Heat bypasses the insulation entirely at every web.</p>
+      <p>To match the continuous insulation of an ICF wall, a CMU assembly typically needs several inches of added exterior foam — and even then, the thermal bridge at each web is still there. ICF has no equivalent bridge: the foam runs continuous on both faces of the wall, with the concrete core doing the structural work in the middle.</p>
+
+      <hr>
+
+      <h2 id="install-speed">Install Speed and Schedule Risk</h2>
+      <p>Time is money on every job site. ICF forms are lightweight and move fast compared to individual block units — an experienced ICF crew typically stacks a wall to pour-ready faster than a mason lays the equivalent CMU wall. That gets you to the pour sooner and gets the next trades on site sooner.</p>
+      <p>For builders juggling multiple projects or working against a tight closing date, that schedule compression is often worth more than the line-item cost difference on the wall itself.</p>
+
+      <hr>
+
+      <h2 id="trade-friendly">Working Around the Wall On Site</h2>
+      <p>Electricians and plumbers sometimes assume ICF is harder to work around than block. In practice it's usually easier. Penetrations for plumbing, HVAC, and electrical can be cut into the foam before or after the pour with a hot knife, chainsaw, or reciprocating saw — no drilling through cured masonry, no cracked block, no core-fill guesswork about what's actually inside that cell.</p>
+
+      <hr>
+
+      <h2 id="six-in-one">What You're Actually Buying</h2>
+      <p>An ICF wall condenses several separate systems into one pour: structural wall, insulation, air barrier, vapor barrier, and interior/exterior finish attachment. With CMU, several of those are separate scopes handled by separate trades — which is exactly where the hidden costs above come from. It's not that CMU can't get to the same performance; it's that getting there usually means adding steps CMU doesn't include by default.</p>
+
+      <hr>
+
+      <h2 id="when-cmu-makes-sense">Honest Answer: When CMU Still Makes Sense</h2>
+      <p>ICF isn't the right call on every job, and pretending otherwise doesn't help anyone. CMU can still be the better choice when local masonry labor is abundant and cheap relative to ICF crews in your market, on tall commercial walls where the structural engineering was already designed around a masonry system, or on repair and infill work tying into existing block construction — where matching the existing material is simpler than transitioning systems mid-wall.</p>
+      <p>If none of those apply to your project, the full-assembly math above is worth running before you assume the lower bid number is the lower cost.</p>
+
+      <hr>
+
+      <h2 id="summary">The Summary</h2>
+      <ol>
+        <li>CMU bids often exclude steel and fur-out framing — both typically show up as separate scopes once you're past the initial number.</li>
+        <li>CMU's thermal bridging at each block web means added exterior foam is usually needed to approach ICF's continuous insulation, and the bridge still isn't fully solved.</li>
+        <li>ICF crews typically stack a wall faster than a mason lays the CMU equivalent, compressing your schedule to pour.</li>
+        <li>Trade penetrations are generally easier through ICF foam than through cured block.</li>
+        <li>ICF condenses structure, insulation, air/vapor barrier, and finish attachment into one system; CMU often needs those added separately.</li>
+        <li>CMU still has a place — cheap local labor, existing masonry designs, and repair/infill work tying into existing block.</li>
+      </ol>
+
+      <hr>
+
+      <h2 id="faq">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Is ICF or CMU cheaper?</p>
+          <p class="faq-a">The initial bid often makes CMU look cheaper, but that number is usually incomplete. Steel reinforcement (rebar, embeds, lintel steel) and fur-out strips for interior finishes are typically separate line items quoted by other trades. Once the full assembly is priced apples-to-apples, ICF is frequently competitive with or cheaper than a complete CMU wall.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Why isn't steel included in most CMU bids?</p>
+          <p class="faq-a">The mason's bid typically covers block and mortar labor only. Rebar, embeds, and lintel steel for a structurally sound block wall are usually a separate scope of work, often quoted by a different contractor. That split makes CMU look artificially cheap when bids are compared side by side.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Do CMU walls need fur-outs for drywall?</p>
+          <p class="faq-a">Yes. To attach drywall or interior finishes to a CMU wall, you need fur-out strips — usually in the framer's bid, not the mason's. ICF forms have fastening strips built into the foam, so drywall and exterior finishes attach directly with no separate furring step.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Does CMU have a thermal bridging problem?</p>
+          <p class="faq-a">Yes. Standard CMU walls have concrete webs connecting the inside and outside face, creating a continuous path for heat to bypass any cavity insulation. Matching the continuous insulation of an ICF wall typically requires several inches of added exterior foam on a CMU assembly, and even then the wall doesn't perform as well because the thermal bridge at each web remains.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Is ICF installation faster than CMU?</p>
+          <p class="faq-a">Generally yes. ICF forms are lightweight and stack quickly compared to laying individual block units. An experienced ICF crew typically gets a wall to pour-ready faster than a block mason lays the equivalent CMU wall, which shortens the timeline to get other trades on site.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">When does CMU still make sense over ICF?</p>
+          <p class="faq-a">CMU can still be the right call on projects with abundant local masonry labor and tight material budgets, on tall commercial walls engineered around a masonry design the architect already specced, or on repair and infill work tying into existing block construction where matching the existing system is simpler than transitioning materials.</p>
+        </div>
+      </div>
+
+      <div class="related-guides">
+        <p class="related-label">Related Guides</p>
+        <div class="related-grid">
+          <a href="/guides/building-icf-home/" class="related-card">
+            <span class="related-card-tag">Start Here</span>
+            <span class="related-card-title">The Complete ICF Guide</span>
+          </a>
+          <a href="/guides/icf-vs-wood-frame/" class="related-card">
+            <span class="related-card-tag">Decision Phase</span>
+            <span class="related-card-title">ICF vs. Wood Frame</span>
+          </a>
+          <a href="/guides/icf-concrete-mix-pour-spec/" class="related-card">
+            <span class="related-card-tag">Pour Day</span>
+            <span class="related-card-title">ICF Concrete Mix Spec</span>
+          </a>
+        </div>
+      </div>
+      <div class="article-cta">
+        <h3>Comparing foundation systems for an upcoming project?</h3>
+        <p>Talk it through directly — pricing, spec questions, or a second opinion on which system fits your build.</p>
+        <a href="/contact/" class="btn-light">Contact Eric →</a>
+      </div>
+
+    </article>
+
+    <aside class="toc">
+      <p class="toc-label">In This Guide</p>
+      <ul class="toc-list">
+        <li><a href="#hidden-costs">Hidden CMU Costs</a></li>
+        <li><a href="#thermal-bridging">Thermal Bridging</a></li>
+        <li><a href="#install-speed">Install Speed</a></li>
+        <li><a href="#trade-friendly">Working Around the Wall</a></li>
+        <li><a href="#six-in-one">What You're Buying</a></li>
+        <li><a href="#when-cmu-makes-sense">When CMU Makes Sense</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="toc-cta">
+        <p>25-point checklist for ICF builds — free download.</p>
+        <a href="/#checklist" class="btn-primary-sm">Get the Checklist →</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer style="border-top: 1px solid var(--border); padding: 28px 0;">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <span style="font-size:14px;font-weight:700;color:var(--warm-gray);">howto<span style="color:var(--amber);">icf</span>.com &nbsp;·&nbsp; <span style="font-weight:400;">The independent ICF field guide.</span></span>
+      <nav style="display:flex;gap:20px;">
+        <a href="/guides" style="font-size:13px;color:var(--warm-gray);">Guides</a>
+        <a href="/about" style="font-size:13px;color:var(--warm-gray);">About</a>
+        <a href="/privacy" style="font-size:13px;color:var(--warm-gray);">Privacy</a>
+        <a href="/contact" style="font-size:13px;color:var(--warm-gray);">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
