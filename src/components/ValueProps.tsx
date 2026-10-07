@@ -2,20 +2,16 @@ import { CheckCircle2 } from 'lucide-react';
 
 const props = [
   {
-    title: 'Real pour specs, not brochure copy',
-    desc: '3,000–4,000 psi, 5-inch slump, 3/8" aggregate — the actual numbers your crew needs on site.',
+    title: 'One person reads the form',
+    desc: 'Project notes come to me. I cover the Northeast, Southeast, and Southwest for Stronghold ICF. No matching service, no ticket system.',
   },
   {
-    title: 'Field-rep perspective on every install phase',
-    desc: 'Written from the rep\'s chair, not the manufacturer\'s marketing department.',
+    title: 'The system I sell',
+    desc: 'Stronghold FX fixed blocks in 6-inch and 8-inch cores, and FD foldable blocks from 4-inch to 12-inch. Blowout resistance is designed into the block, not strapped on after a bad pour.',
   },
   {
-    title: 'Honest cost and trade-off analysis',
-    desc: 'We tell you where ICF wins, where it costs more, and what to watch out for.',
-  },
-  {
-    title: 'Free tools for owner-builders',
-    desc: 'Checklists, guides, and resources to keep your project on track from design through post-pour.',
+    title: 'Honest about the tradeoff',
+    desc: 'ICF costs more upfront than wood. I will tell you where it wins on wind, fire, and energy, and where a conventional wall is still the better bid.',
   },
 ];
 
@@ -28,23 +24,19 @@ export default function ValueProps() {
             Why This Site
           </p>
           <h2 className="text-4xl md:text-5xl font-black text-white leading-tight">
-            What you get here
+            You are talking to the rep, not a brand queue.
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {props.map((item) => (
             <div
               key={item.title}
               className="group border border-white/8 bg-white/3 hover:bg-white/6 hover:border-amber-500/30 p-8 transition-all duration-300"
             >
-              <div className="flex items-start gap-4">
-                <CheckCircle2 className="text-amber-500 mt-0.5 shrink-0" size={22} />
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </div>
+              <CheckCircle2 className="text-amber-500 mb-4" size={22} />
+              <h3 className="text-white font-bold text-lg mb-2">{item.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
