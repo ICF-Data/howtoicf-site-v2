@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight, Shield } from 'lucide-react';
+import { trackPixel } from '../lib/pixel';
 
 const phases = [
   'Design Review',
@@ -30,6 +31,7 @@ export default function LeadMagnet() {
       });
 
       if (!res.ok) throw new Error('failed');
+      trackPixel('trackCustom', 'ChecklistDownload');
       setState('success');
     } catch {
       setState('error');
