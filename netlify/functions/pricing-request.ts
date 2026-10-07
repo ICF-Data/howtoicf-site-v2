@@ -124,7 +124,7 @@ export const handler: Handler = async (event) => {
       from: `Eric Kimbriel <${FROM_EMAIL}>`,
       to: email,
       reply_to: REPLY_TO,
-      subject: 'Got your ICF project',
+      subject: 'Got your ICF project 👷‍♂️',
       html: `
         <p>${firstName ? `Hey ${firstName},` : 'Hey,'}</p>
         <p>Your project came through${region ? ` for the ${esc(region.replace(/ US$/, ''))}` : ''}. It came to me, not a queue. I will call or text you back at the number you gave.</p>
