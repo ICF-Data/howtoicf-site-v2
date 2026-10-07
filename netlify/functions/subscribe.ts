@@ -98,7 +98,7 @@ export const handler: Handler = async (event) => {
     },
     body: JSON.stringify({
       from: FROM_EMAIL,
-      to: 'eric@icfnearme.com',
+      to: ['eric@strongholdicf.com', 'eric@icfnearme.com'],
       subject: `New Checklist Subscriber — ${name || email}`,
       html: `
         <div style="background:#1A1A1A;padding:32px;font-family:sans-serif;max-width:560px;">
