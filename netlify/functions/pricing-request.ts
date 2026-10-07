@@ -17,7 +17,11 @@ export const handler: Handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid request body' }) };
   }
 
-  const { name, company, email, phone, location, 'project-type': projectType, footage, timeline, notes } = body;
+  const {
+    name, company, email, phone, location, region, role,
+    'project-type': projectType, footage, timeline, notes,
+    source, utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+  } = body;
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Valid email required' }) };
@@ -29,9 +33,9 @@ export const handler: Handler = async (event) => {
     email,
     reactivate_existing: true,
     send_welcome_email: false,
-    utm_source: 'howtoicf.com',
-    utm_medium: 'organic',
-    utm_campaign: 'pricing-request',
+    utm_source: utm_source || 'howtoicf.com',
+    utm_medium: utm_medium || 'organic',
+    utm_campaign: utm_campaign || 'pricing-request',
   };
   if (nameParts[0]) beehiivPayload.first_name = nameParts[0];
   if (nameParts.length > 1) beehiivPayload.last_name = nameParts.slice(1).join(' ');
@@ -53,8 +57,13 @@ export const handler: Handler = async (event) => {
   }
 
   // Send notification email to Eric with full project details
-  const row = (label: string, value: string) =>
-    value ? `<tr><td style="padding:6px 12px 6px 0;color:#9A9087;font-size:13px;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:6px 0;color:#F0EBE3;font-size:13px;">${value}</td></tr>` : '';
+  const esc = (value: string) =>
+    String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const utm = [utm_source, utm_medium, utm_campaign, utm_content, utm_term].filter(Boolean).join(' / ');
+  const row = (label: string, raw: string) => {
+    const value = raw ? esc(raw) : '';
+    return value ? `<tr><td style="padding:6px 12px 6px 0;color:#9A9087;font-size:13px;white-space:nowrap;vertical-align:top;">${label}</td><td style="padding:6px 0;color:#F0EBE3;font-size:13px;">${value}</td></tr>` : '';
+  };
 
   const resendRes = await fetch('https://api.resend.com/emails', {
     method: 'POST',
@@ -65,7 +74,7 @@ export const handler: Handler = async (event) => {
     body: JSON.stringify({
       from: FROM_EMAIL,
       to: 'eric@icfnearme.com',
-      subject: `Pricing Request — ${name || 'Unknown'}${company ? ` · ${company}` : ''}`,
+      subject: `Pricing Request — ${name || 'Unknown'}${company ? ` · ${company}` : ''}${region ? ` · ${region}` : ''}`,
       html: `
         <div style="background:#1A1A1A;padding:32px;font-family:sans-serif;max-width:560px;">
           <p style="color:#C8883A;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 16px;">New Pricing Request — howtoicf.com</p>
@@ -74,11 +83,15 @@ export const handler: Handler = async (event) => {
             ${row('Company', company)}
             ${row('Email', email)}
             ${row('Phone', phone)}
+            ${row('Region', region)}
             ${row('Location', location)}
+            ${row('Role', role)}
             ${row('Project Type', projectType)}
             ${row('Est. Linear Footage', footage)}
             ${row('Timeline', timeline)}
             ${row('Notes', notes)}
+            ${row('Form', source)}
+            ${row('UTM', utm)}
           </table>
         </div>
       `,
