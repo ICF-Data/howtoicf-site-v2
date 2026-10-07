@@ -4,8 +4,8 @@ const BEEHIIV_API_KEY = process.env.BEEHIIV_API_KEY!;
 const BEEHIIV_PUBLICATION_ID = process.env.BEEHIIV_PUBLICATION_ID!;
 const RESEND_API_KEY = process.env.RESEND_API_KEY!;
 const FROM_EMAIL = process.env.FROM_EMAIL!;
-// Comma-separated override; defaults to both of Eric's inboxes
-const NOTIFY_EMAILS = (process.env.NOTIFY_EMAIL || 'eric@strongholdicf.com,eric@icfnearme.com')
+// Comma-separated override
+const NOTIFY_EMAILS = (process.env.NOTIFY_EMAIL || 'eric@strongholdicf.com')
   .split(',')
   .map((address) => address.trim())
   .filter(Boolean);

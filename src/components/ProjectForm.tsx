@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { trackPixel } from '../lib/pixel';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
 
@@ -66,6 +67,7 @@ export default function ProjectForm({
         body: JSON.stringify({ ...form, source, ...utm }),
       });
       if (!res.ok) throw new Error();
+      trackPixel('track', 'Lead', { content_name: source, content_category: form.region });
       setStatus('success');
     } catch {
       setStatus('error');
