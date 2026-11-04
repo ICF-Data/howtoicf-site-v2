@@ -1,6 +1,7 @@
 import Footer from '../components/Footer';
 import ProjectForm from '../components/ProjectForm';
 import { usePageMeta } from '../lib/usePageMeta';
+import { DISTRIBUTOR_NOTE } from '../lib/site';
 
 type Territory = {
   slug: 'ne' | 'se' | 'sw';
@@ -20,7 +21,7 @@ const territories: Record<Territory['slug'], Territory> = {
     name: 'Northeast',
     title: 'Northeast ICF Pricing — Eric Kimbriel, Stronghold',
     description:
-      'Stronghold ICF pricing for Northeast contractors. Eric Kimbriel covers the territory. Not the official Stronghold website.',
+      'Stronghold ICF pricing for Northeast contractors. Eric Kimbriel covers the territory. Eric Kimbriel, National Sales, Stronghold ICF.',
     h1: 'Wind-ready walls, and a pour plan that works in the cold.',
     lede: 'I cover the Northeast for Stronghold ICF. Send the project and I will come back with block options, delivery, and the pour specs your ready-mix supplier needs.',
     pills: ['Contractors and GCs', 'FX and FD blocks', 'Not a call center'],
@@ -45,7 +46,7 @@ const territories: Record<Territory['slug'], Territory> = {
     name: 'Southeast',
     title: 'Southeast ICF Pricing — Eric Kimbriel, Stronghold',
     description:
-      'Stronghold ICF pricing for Southeast contractors. Eric Kimbriel covers the territory. Not the official Stronghold website.',
+      'Stronghold ICF pricing for Southeast contractors. Eric Kimbriel covers the territory. Eric Kimbriel, National Sales, Stronghold ICF.',
     h1: 'Hurricane wind is not the place to learn ICF on pour day.',
     lede: 'Southeast joined my book in October 2026. If you are pricing a coastal or inland job and you want Stronghold numbers, not a factory form, send it here.',
     pills: ['New territory', 'Contractors and GCs', 'Straight walls, fewer straps'],
@@ -70,14 +71,14 @@ const territories: Record<Territory['slug'], Territory> = {
     name: 'Southwest',
     title: 'Southwest ICF Pricing — Eric Kimbriel, Stronghold',
     description:
-      'Stronghold ICF pricing for Southwest contractors. Eric Kimbriel covers the territory. Not the official Stronghold website.',
+      'Stronghold ICF pricing for Southwest contractors. Eric Kimbriel covers the territory. Eric Kimbriel, National Sales, Stronghold ICF.',
     h1: 'Heat, wildfire interface, and a delivery date you can build on.',
     lede: 'I cover the Southwest for Stronghold ICF. Send the wall package and I will price FX or FD, flag the core, and tell you what the ready-mix supplier needs before the truck rolls.',
     pills: ['Contractors and GCs', 'Wildfire-country jobs', 'Rep, not a queue'],
     cards: [
       {
         title: 'The first ICF job',
-        desc: 'Most Southwest calls are crews who have bid wood for years and just lost one to energy code or an owner who asked about fire. The checklist is built for that handoff.',
+        desc: 'Most Southwest calls are crews who have bid wood for years and just lost one to energy code or an owner who asked about fire. I help crews make that switch.',
       },
       {
         title: 'What Stronghold changes',
@@ -123,7 +124,7 @@ export default function TerritoryPage({ slug }: { slug: Territory['slug'] }) {
 
       <div className="border-b border-white/5 bg-[#0b0e14]">
         <p className="max-w-6xl mx-auto px-6 py-3 text-gray-400 text-xs leading-relaxed">
-          Independent rep page for the {t.name}. Eric Kimbriel sells Stronghold ICF. This is not the official Stronghold website.
+          {DISTRIBUTOR_NOTE}
         </p>
       </div>
 
@@ -161,7 +162,7 @@ export default function TerritoryPage({ slug }: { slug: Territory['slug'] }) {
                 showTiming
                 locationPlaceholder={t.locationPlaceholder}
                 submitLabel="Send to Eric"
-                fine={`${t.name} only on this page. Official specs and warranty: strongholdicf.com.`}
+                fine={`${t.name} only on this page. Some areas are served by an established Stronghold distributor; if yours is, I will connect you with them. Specs and warranty: strongholdicf.com.`}
               />
             </div>
           </div>

@@ -15,7 +15,7 @@ type Props = {
   fine: string;
 };
 
-const ROLES = ['Contractor', 'General contractor', 'Owner-builder', 'Architect or engineer'];
+const ROLES = ['Contractor', 'General contractor', 'Builder', 'Owner-builder / DIY', 'Architect or engineer', 'Lumberyard or home center'];
 const TIMINGS = ['Planning', 'Permitted', 'Ready to order'];
 const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
 

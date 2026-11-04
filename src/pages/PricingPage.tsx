@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { DISTRIBUTOR_NOTE } from '../lib/site';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
 
@@ -87,7 +88,10 @@ export default function PricingPage() {
                 Get ICF Pricing for Your Project.
               </h1>
               <p className="text-[#9A9087] text-lg leading-relaxed mb-10">
-                We work directly with contractors and GCs. Give us your project specs and we'll have accurate material pricing back to you within one business day.
+                Pricing for the Northeast, Southeast and Southwest, straight from Eric Kimbriel, National Sales, Stronghold ICF. Send your project specs and I'll have material pricing back to you within one business day.
+              </p>
+              <p className="text-[#F0EBE3] text-sm leading-relaxed border-l-2 border-[#C8883A] pl-4 mb-10">
+                {DISTRIBUTOR_NOTE}
               </p>
               <ul className="flex flex-col gap-4">
                 {[

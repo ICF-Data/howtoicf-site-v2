@@ -1,6 +1,14 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
+const links = [
+  { label: 'How to Work with Eric', href: '/#work-with-eric' },
+  { label: 'Specs', href: '/#specs' },
+  { label: 'Get Pricing', href: '/get-pricing' },
+  { label: 'About', href: '/about/' },
+  { label: 'Contact', href: '/contact/' },
+];
+
 export default function Nav() {
   const [open, setOpen] = useState(false);
 
@@ -13,32 +21,33 @@ export default function Nav() {
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="/guides/" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">Guides</a>
-          <a href="/about/" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">About</a>
-          <a href="/contact/" className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">Contact</a>
+        <nav className="hidden lg:flex items-center gap-7">
+          {links.map((l) => (
+            <a key={l.label} href={l.href} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium tracking-wide">
+              {l.label}
+            </a>
+          ))}
         </nav>
 
         <a
           href="/#checklist"
-          className="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2.5 transition-all duration-200 tracking-wide uppercase"
+          className="hidden lg:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-black text-sm font-bold px-5 py-2.5 transition-all duration-200 tracking-wide uppercase"
         >
           Free Checklist →
         </a>
 
-        <button
-          className="md:hidden text-white"
-          onClick={() => setOpen(!open)}
-        >
+        <button className="lg:hidden text-white" aria-label="Menu" onClick={() => setOpen(!open)}>
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-[#07090d] border-t border-white/5 px-6 py-4 flex flex-col gap-4">
-          <a href="/guides/" onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">Guides</a>
-          <a href="/about/" onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">About</a>
-          <a href="/contact/" onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">Contact</a>
+        <div className="lg:hidden bg-[#07090d] border-t border-white/5 px-6 py-4 flex flex-col gap-4">
+          {links.map((l) => (
+            <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="text-sm text-gray-400 hover:text-white transition-colors duration-200 font-medium">
+              {l.label}
+            </a>
+          ))}
           <a
             href="/#checklist"
             onClick={() => setOpen(false)}
