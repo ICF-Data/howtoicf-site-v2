@@ -1,8 +1,8 @@
 import Nav from '../components/Nav';
 import Hero from '../components/Hero';
 import ValueProps from '../components/ValueProps';
-import Guides from '../components/Guides';
-import FeaturedGuide from '../components/FeaturedGuide';
+import WorkWithEric from '../components/WorkWithEric';
+import Specs from '../components/Specs';
 import LeadMagnet from '../components/LeadMagnet';
 import About from '../components/About';
 import FooterCTA from '../components/FooterCTA';
@@ -15,8 +15,8 @@ export default function HomePage() {
       <main>
         <Hero />
         <ValueProps />
-        <Guides />
-        <FeaturedGuide />
+        <WorkWithEric />
+        <Specs />
         <LeadMagnet />
         <About />
         <FooterCTA />

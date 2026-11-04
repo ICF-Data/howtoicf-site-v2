@@ -9,6 +9,18 @@
   status = 301
 
 [[redirects]]
+  from = "/guides/*"
+  to = "/#work-with-eric"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/guides"
+  to = "/#work-with-eric"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
